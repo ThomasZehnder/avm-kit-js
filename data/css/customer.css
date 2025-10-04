@@ -8,7 +8,7 @@ h2 {
     color: lightgreen
 }
 
-button {
+button.navigate {
     background-color: lightgrey;
     color: black;
     border: 2px solid grey;
