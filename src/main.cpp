@@ -74,7 +74,7 @@ void handleFile() {
   mySerial.println(" File Request: "+ path);
   mySerial.println(" Method Request: "+ methodToString(server.method( )));
   
-  if (path.startsWith("/")) path.remove(0, 1); // "/" entfernen
+  if (path.startsWith("/")) path.remove(0, 1); // "/" removen
 
   const CFileEntry* file = findCFileSystem(path.c_str());
   if (file) {
@@ -85,7 +85,12 @@ void handleFile() {
   }
 }
 
-
+void handleMessageLog() {
+  server.send(200, "text/html", getAvmSerialAsHtmlList());
+}
+void handleFileDirectory() {
+  server.send(200, "text/html", getCFileDirectoryAsHtmlList());
+}   
 
 void setup() {
   Serial.begin(115200);
@@ -123,6 +128,8 @@ void setup() {
 
   // Routen
   server.on("/", handleRoot);
+  server.on("/services/messagelog.html", handleMessageLog);  // Add new route
+  server.on("/services/filedirectory.html", handleFileDirectory);  // Add new route
   server.onNotFound(handleFile);
 
   // Webserver starten
