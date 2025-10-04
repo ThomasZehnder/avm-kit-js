@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Demo Page</title>
+  <meta charset="UTF-8">
+  <title>Demo Page</title>
 
   <link rel="icon" type="image/png" href="images/favicon.png">
   <!-- Stylesheet -->
@@ -12,9 +13,10 @@
   <script src="js/pages.js"></script>
 
 </head>
+
 <body>
 
-<!-- Simple Page Switch Demo -->
+  <!-- Simple Page Switch Demo -->
   <div page="main">
     <h1>Main Page As Demo</h1>
     <button class="navigate" data-i18n="global.home" onclick="changePage('pages/startpage')">Go Main</button>
@@ -22,26 +24,44 @@
     <button class="navigate" onclick="changePage('pages/monitorpage')">Go to Monitor Page</button>
   </div>
 
-<!--container to add html pages dynamicaly-->
-<div id="pagesContainer"></div>
-<script>dynamicLoadPage("pages/startpage");</script>
-<script>dynamicLoadPage("pages/servicepage");</script>
-
-<!--container to add js and html pages dynamicaly-->
-<script src="js/monitorpage.js"></script>
-
-
-<!-- language selector fix positioned with css in the upper right corner-->
-<button id="lang-button">
-  <img class="icon" src="images/globe_icon.svg"   alt="Globe">
-</button>
-<!-- Overlay-Dialog for the langage-->
-<div id="lang-dialog">
-  <img src="" alt="Flag">
-</div>
+  <!--container to add html pages dynamicaly-->
+  <div id="pagesContainer"></div>
+  <script>dynamicLoadPage("pages/startpage");</script>
+  <script>dynamicLoadPage("pages/servicepage");</script>
+  
+  <!--container to add js and html pages dynamicaly-->
+  <script src="js/monitorpage.js"></script>
+  <script src="js/diagnosispage.js"></script>
 
 
-<!-- Externe JS einbinden -->
-<script src="js/i18n.js" defer></script>
+  <!-- language selector fix positioned with css in the upper right corner-->
+  <button id="lang-button">
+    <img class="icon" src="images/globe_icon.svg">
+  </button>
+  <!-- Overlay-Dialog for the langage-->
+  <div id="lang-dialog">
+    <img src="" alt="Flag">
+  </div>
+
+  <footer>
+        <div class="left">
+      <button id="diagnose-button" onclick="changePage('main')">
+        <img class="icon" src="images/home_icon.png">
+      </button>
+    </div>
+    <div class="centered">© 2025 Your Company</div>
+    <div class="right">
+      <button id="diagnose-button" onclick="changePage('pages/diagnosispage')">
+        <img class="icon" src="images/diagnosis_icon.png">
+      </button>
+    </div>
+    </p>
+
+
+  </footer>
+
+  <!-- Externe JS einbinden -->
+  <script src="js/i18n.js" defer></script>
 </body>
+
 </html>
