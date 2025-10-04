@@ -1,5 +1,6 @@
 // Auto-generated main filesystem header
 
+#include "fs/css_customer_css.h"
 #include "fs/css_i18n_css.h"
 #include "fs/css_pages_css.h"
 #include "fs/css_test_styles_css.h"
@@ -33,6 +34,7 @@ typedef struct {
 } CFileEntry;
 
 const CFileEntry cFileSystem[] = {
+    {"css/customer.css", css_customer_css, css_customer_css_len},
     {"css/i18n.css", css_i18n_css, css_i18n_css_len},
     {"css/pages.css", css_pages_css, css_pages_css_len},
     {"css/test-styles.css", css_test_styles_css, css_test_styles_css_len},
