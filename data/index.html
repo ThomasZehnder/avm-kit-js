@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Demo Page</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/i18n.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <script src="js/pages.js"></script>
+
+</head>
+<body>
+
+<!-- Simple Page Switch Demo -->
+  <div page="main">
+    <h1>Main Page As Demo</h1>
+    <button data-i18n="global.home" onclick="changePage('pages/startpage')">Go Main</button>
+    <button onclick="changePage('pages/servicepage')">Go to Service Page</button>
+    <button onclick="changePage('pages/monitorpage')">Go to Monitor Page</button>
+  </div>
+
+<!--container to add html pages dynamicaly-->
+<div id="pagesContainer"></div>
+<script>dynamicLoadPage("pages/startpage");</script>
+<script>dynamicLoadPage("pages/servicepage");</script>
+
+<!--container to add js and html pages dynamicaly-->
+<script src="js/monitorpage.js"></script>
+
+
+<!-- language selector fix positioned with css in the upper right corner-->
+<button id="lang-button">
+  <img class="icon" src="images/globe_icon.svg"   alt="Globe">
+</button>
+<!-- Overlay-Dialog for the langage-->
+<div id="lang-dialog">
+  <img src="" alt="Flag">
+</div>
+
+
+<!-- Externe JS einbinden -->
+<script src="js/i18n.js" defer></script>
+</body>
+</html>

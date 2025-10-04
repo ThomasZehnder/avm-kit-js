@@ -1,0 +1,65 @@
+// Auto-generated main filesystem header
+
+#include "fs/css_i18n_css.h"
+#include "fs/css_pages_css.h"
+#include "fs/css_test_styles_css.h"
+#include "fs/i18n_de_json.h"
+#include "fs/i18n_en_json.h"
+#include "fs/i18n_kr_json.h"
+#include "fs/images_favicon_png.h"
+#include "fs/images_flags_de_svg.h"
+#include "fs/images_flags_en_svg.h"
+#include "fs/images_flags_es_svg.h"
+#include "fs/images_flags_fr_svg.h"
+#include "fs/images_flags_it_svg.h"
+#include "fs/images_flags_kr_svg.h"
+#include "fs/images_globe_icon_svg.h"
+#include "fs/index_html.h"
+#include "fs/js_i18n_js.h"
+#include "fs/js_monitorpage_js.h"
+#include "fs/js_pages_js.h"
+#include "fs/js_test_jquery_js.h"
+#include "fs/languagedemo_html.h"
+#include "fs/pagedemo_html.h"
+#include "fs/pages_monitorpage_html.h"
+#include "fs/pages_servicepage_html.h"
+#include "fs/pages_startpage_html.h"
+#include "fs/test_includes_html.h"
+
+typedef struct {
+    const char* name;
+    const unsigned char* data;
+    unsigned int len;
+} CFileEntry;
+
+const CFileEntry cFileSystem[] = {
+    {"css/i18n.css", css_i18n_css, css_i18n_css_len},
+    {"css/pages.css", css_pages_css, css_pages_css_len},
+    {"css/test-styles.css", css_test_styles_css, css_test_styles_css_len},
+    {"i18n/de.json", i18n_de_json, i18n_de_json_len},
+    {"i18n/en.json", i18n_en_json, i18n_en_json_len},
+    {"i18n/kr.json", i18n_kr_json, i18n_kr_json_len},
+    {"images/favicon.png", images_favicon_png, images_favicon_png_len},
+    {"images/flags/de.svg", images_flags_de_svg, images_flags_de_svg_len},
+    {"images/flags/en.svg", images_flags_en_svg, images_flags_en_svg_len},
+    {"images/flags/es.svg", images_flags_es_svg, images_flags_es_svg_len},
+    {"images/flags/fr.svg", images_flags_fr_svg, images_flags_fr_svg_len},
+    {"images/flags/it.svg", images_flags_it_svg, images_flags_it_svg_len},
+    {"images/flags/kr.svg", images_flags_kr_svg, images_flags_kr_svg_len},
+    {"images/globe_icon.svg", images_globe_icon_svg, images_globe_icon_svg_len},
+    {"index.html", index_html, index_html_len},
+    {"js/i18n.js", js_i18n_js, js_i18n_js_len},
+    {"js/monitorpage.js", js_monitorpage_js, js_monitorpage_js_len},
+    {"js/pages.js", js_pages_js, js_pages_js_len},
+    {"js/test-jquery.js", js_test_jquery_js, js_test_jquery_js_len},
+    {"languagedemo.html", languagedemo_html, languagedemo_html_len},
+    {"pagedemo.html", pagedemo_html, pagedemo_html_len},
+    {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
+    {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
+    {"pages/startpage.html", pages_startpage_html, pages_startpage_html_len},
+    {"test-includes.html", test_includes_html, test_includes_html_len},
+};
+
+const int cFileSystemCount = sizeof(cFileSystem)/sizeof(cFileSystem[0]);
+
+const CFileEntry* findCFileSystem(const char* name);

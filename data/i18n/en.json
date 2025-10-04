@@ -1,0 +1,9 @@
+{
+  "title": "Hello",
+  "description": "This is a test paragraph.",
+  "id-test-missing-in-ko": "This key is missing in the Korean translation file.",
+  "global.exit": "Exit",
+  "global.home": "Main Page",
+  "servicepage.title": "Service Page",
+  "startpage.title": "Start Page"
+}

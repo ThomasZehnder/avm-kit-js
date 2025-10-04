@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kleine Seite</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/test-styles.css" />
+
+  <!-- Optional: Preload für schnellere Ladezeit (entfernen wenn nicht gewünscht) -->
+  <!-- <link rel="preload" href="./css/test-style.css" as="style"> -->
+</head>
+<body>
+  <header>
+    <h1>Willkommen</h1>
+    <p>Dies ist eine kleine HTML-Seite, die CSS und JS aus lokalen Pfaden lädt.</p>
+  </header>
+
+  <main>
+    <section id="app">
+      <p id="status">Status: bereit</p>
+      <button id="run-btn">Ausführen</button>
+    </section>
+  </main>
+
+  <footer>
+    <small>© Beispiel</small>
+  </footer>
+
+  <!-- JavaScript: defer sorgt dafür, dass das Script nach dem Parsen ausgeführt wird -->
+  <script src="js/test-jquery.js" defer></script>
+</body>
+</html>

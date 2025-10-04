@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Switch Demo</title>
+    <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <div page="main">
+    <h1>Main Page</h1>
+    <button onclick="changePage('about')">Go to About</button>
+    <button onclick="changePage('contact')">Go to Contact</button>
+  </div>
+
+  <div page="about">
+    <h1>About Page</h1>
+    <button onclick="changePage('contact')">Go to Contact</button>
+  </div>
+
+  <div page="contact">
+    <h1>Main Page</h1>
+    <button onclick="changePage('main')">Back to Main</button>
+  </div>
+
+  <!-- must be laoded at the end of the HTML Page-->
+  <script src="js/pages.js"></script>
+</body>
+</html>

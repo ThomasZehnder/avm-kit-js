@@ -1,0 +1,11 @@
+{
+  "name": "avmswiss-10031.05-arduino-projekt-8357382843c7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run filebuild": "node ./node-scripts/generate-c-dir.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

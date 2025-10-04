@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="1330"
+   height="700"
+   viewBox="0 0 18525 9750"
+   xml:space="preserve"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="English_language.svg"
+   inkscape:export-filename="C:\Documents and Settings\foo\바탕 화면\g1919.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><sodipodi:namedview
+   inkscape:window-height="975"
+   inkscape:window-width="1280"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   guidetolerance="10.0"
+   gridtolerance="10.0"
+   objecttolerance="10.0"
+   borderopacity="1.0"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   id="base"
+   showgrid="true"
+   inkscape:object-points="false"
+   inkscape:object-paths="false"
+   inkscape:grid-points="true"
+   inkscape:zoom="0.38183767"
+   inkscape:cx="665"
+   inkscape:cy="350"
+   inkscape:window-x="-4"
+   inkscape:window-y="-4"
+   inkscape:current-layer="svg2"
+   inkscape:window-maximized="0" />
+  <metadata
+   id="metadata4">
+    <rdf:RDF>
+      <rdf:Description
+   about="http://commons.wikimedia.org/wiki/Image:Flag_of_the_United_States.svg"
+   dc:title="Flag of the United States"
+   dc:description="The flag of the United States:     * 50 stars     * In use since 4 July 1960     * Specifications: United States Executive Order 10834     * Designed by Robert Heft in 1958     * Proportions: 19x10     * Colors:         * Cable No. 70180 Old Glory Red, PMS 193C         * Cable No. 70001 White         * Cable No. 70075 Old Glory Blue, PMS 193C     * License: public domain"
+   dc:publisher="Wikimedia Commons"
+   dc:date="2006-04-26"
+   dc:format="image/svg+xml"
+   dc:language="en">
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>flag</rdf:li>
+            <rdf:li>united_states</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:creator>
+          <rdf:Bag>
+            <rdf:li>Daniel McRae</rdf:li>
+            <rdf:li>Dbenbenn</rdf:li>
+            <rdf:li>Zscout370</rdf:li>
+            <rdf:li>Pumbaa80</rdf:li>
+            <rdf:li>jacobolus</rdf:li>
+          </rdf:Bag>
+        </dc:creator>
+      </rdf:Description>
+    <cc:Work
+   rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+     rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF>
+  </metadata>
+  <defs
+   id="defs6"><inkscape:perspective
+   sodipodi:type="inkscape:persp3d"
+   inkscape:vp_x="0 : 350 : 1"
+   inkscape:vp_y="0 : 1000 : 0"
+   inkscape:vp_z="1330 : 350 : 1"
+   inkscape:persp3d-origin="665 : 233.33333 : 1"
+   id="perspective73" />
+    <g
+   id="cone">
+      <polygon
+   id="triangle"
+   points="0,0 0,1 0.5,1"
+   transform="translate(0, -1) rotate(18)" />
+      <use
+   xlink:href="#triangle"
+   transform="scale(-1, 1)"
+   id="use10" />
+    </g>
+    <g
+   id="star"
+   transform="translate(1235, 1050) scale(300.3)"
+   fill="white">   
+      <use
+   xlink:href="#cone"
+   id="use13" />
+      <use
+   xlink:href="#cone"
+   transform="rotate(72)"
+   id="use15" />
+      <use
+   xlink:href="#cone"
+   transform="rotate(-72)"
+   id="use17" />
+      <use
+   xlink:href="#cone"
+   transform="rotate(144)"
+   id="use19" />
+      <use
+   xlink:href="#cone"
+   transform="rotate(-144)"
+   id="use21" />
+    </g>
+    <g
+   id="even_star_row">
+      <use
+   id="star 1 even row"
+   xlink:href="#star" />
+      <use
+   id="star 2 even row"
+   xlink:href="#star"
+   x="1235" />
+      <use
+   id="star 3 even row"
+   xlink:href="#star"
+   x="2470" />
+      <use
+   id="star 4 even row"
+   xlink:href="#star"
+   x="3705" />
+      <use
+   id="star 5 even row"
+   xlink:href="#star"
+   x="4940" />
+    </g>
+    <g
+   id="odd_star_row">
+      <use
+   id="last 5 stars odd row"
+   xlink:href="#even_star_row"
+   x="617.5"
+   y="-525" />
+      <use
+   id="star 1 odd row"
+   xlink:href="#star"
+   x="-617.5"
+   y="-525" />
+    </g>
+  <clipPath
+   id="border"><rect
+     id="rect1917"
+     height="15"
+     width="30"
+     y="-7.5"
+     x="-15" /></clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath14763"><g
+     id="Flag of the United States">
+    <rect
+   width="18525"
+   height="9750"
+   id="red background"
+   x="0"
+   y="0"
+   style="fill: rgb(191, 10, 48);" />
+    <g
+   id="white stripes"
+   style="fill: white;">
+      <rect
+   id="stripe 2"
+   width="18525"
+   height="750"
+   y="750"
+   x="0" />
+      <rect
+   id="stripe 4"
+   width="18525"
+   height="750"
+   y="2250"
+   x="0" />
+      <rect
+   id="stripe 6"
+   width="18525"
+   height="750"
+   y="3750"
+   x="0" />
+      <rect
+   id="stripe 8"
+   width="18525"
+   height="750"
+   y="5250"
+   x="0" />
+      <rect
+   id="stripe 10"
+   width="18525"
+   height="750"
+   y="6750"
+   x="0" />
+      <rect
+   id="stripe 12"
+   width="18525"
+   height="750"
+   y="8250"
+   x="0" />
+    </g>
+    <rect
+   id="blue field"
+   width="7410"
+   height="5250"
+   x="0"
+   y="0"
+   style="fill: rgb(0, 40, 104);" />
+    <g
+   id="white stars"> 
+      <g
+   id="star_rows_1-2"> 
+        <use
+   id="star_row_1"
+   xlink:href="#odd_star_row"
+   x="0"
+   y="0"
+   width="18525"
+   height="9750" /> 
+        <use
+   id="star_row_2"
+   xlink:href="#even_star_row"
+   x="0"
+   y="0"
+   width="18525"
+   height="9750" /> 
+      </g> 
+      <use
+   id="star rows 3-4"
+   xlink:href="#star_rows_1-2"
+   y="1050"
+   x="0"
+   width="18525"
+   height="9750" /> 
+      <use
+   id="star rows 5-6"
+   xlink:href="#star_rows_1-2"
+   y="2100"
+   x="0"
+   width="18525"
+   height="9750" /> 
+      <use
+   id="star rows 7-8"
+   xlink:href="#star_rows_1-2"
+   y="3150"
+   x="0"
+   width="18525"
+   height="9750" /> 
+      <use
+   id="star row 9"
+   xlink:href="#odd_star_row"
+   y="4200"
+   x="0"
+   width="18525"
+   height="9750" /> 
+    </g> 
+  </g></clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath23203"><path
+     style="opacity: 1; fill: white; fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 41.7857; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;"
+     d="M -0.0003,0 L -0.0003,9749.9998 L 18525,0.001 L -0.0003,0 z "
+     id="path21313"
+     sodipodi:nodetypes="cccc"
+     clip-path="none" /></clipPath><inkscape:perspective
+   id="perspective2919"
+   inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+   inkscape:vp_z="1 : 0.5 : 1"
+   inkscape:vp_y="0 : 1000 : 0"
+   inkscape:vp_x="0 : 0.5 : 1"
+   sodipodi:type="inkscape:persp3d" /></defs>
+  <g
+   id="g1919"
+   clip-path="url(#border)"
+   transform="matrix(617.5, 0, 0, 650, 9262.5, 4875)"><circle
+     id="circle1921"
+     r="20"
+     cx="0"
+     cy="0"
+     sodipodi:cx="0"
+     sodipodi:cy="0"
+     sodipodi:rx="20"
+     sodipodi:ry="20"
+     style="fill: rgb(0, 36, 125);"
+     d="m 20,0 c 0,11.045695 -8.954305,20 -20,20 -11.045695,0 -20,-8.954305 -20,-20 0,-11.045695 8.954305,-20 20,-20 11.045695,0 20,8.954305 20,20 z" /><path
+     id="diags_white"
+     d="M -20,-10 L 20,10 M -20,10 L 20,-10"
+     style="stroke: white; stroke-width: 3;" /><path
+     id="diags_red"
+     d="M -20,-10 L 20,10 M -20,10 L 20,-10"
+     style="stroke: rgb(207, 20, 43); stroke-width: 2;" /><path
+     id="eraser_white"
+     d="M 0,0 L 20,10 L 17,10 L -3,0 M 0,0 L 20,-10 L 23,-10 L 3,0 M 0,0 L -20,10 L -23,10 L -3,0 M 0,0 L -20,-10 L -17,-10 L 3,0"
+     style="fill: white; stroke: none;" /><comment
+     id="comment1926">I think the above two lines give the simplest way to make the diagonals</comment><path
+     id="cross_white"
+     d="M -20,0 L 20,0 M 0,-10 L 0,10"
+     style="stroke: white; stroke-width: 5;" /><path
+     id="cross_red"
+     d="M -20,0 L 20,0 M 0,-10 L 0,10"
+     style="stroke: rgb(207, 20, 43); stroke-width: 3;" /></g>
+<g
+   id="g14785"
+   clip-path="url(#clipPath23203)"
+   style="stroke: none;"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   transform="translate(0, 0.0001)">
+    <rect
+   style="fill: rgb(191, 10, 48); stroke: none;"
+   y="0"
+   x="0"
+   id="rect14787"
+   height="9750"
+   width="18525" />
+    <g
+   style="fill: white; stroke: none;"
+   id="g14789">
+      <rect
+   x="0"
+   y="750"
+   height="750"
+   width="18525"
+   id="rect14791"
+   style="stroke: none;" />
+      <rect
+   x="0"
+   y="2250"
+   height="750"
+   width="18525"
+   id="rect14793"
+   style="stroke: none;" />
+      <rect
+   x="0"
+   y="3750"
+   height="750"
+   width="18525"
+   id="rect14795"
+   style="stroke: none;" />
+      <rect
+   x="0"
+   y="5250"
+   height="750"
+   width="18525"
+   id="rect14797"
+   style="stroke: none;" />
+      <rect
+   x="0"
+   y="6750"
+   height="750"
+   width="18525"
+   id="rect14799"
+   style="stroke: none;" />
+      <rect
+   x="0"
+   y="8250"
+   height="750"
+   width="18525"
+   id="rect14801"
+   style="stroke: none;" />
+    </g>
+    <rect
+   style="fill: rgb(0, 40, 104); stroke: none;"
+   y="0"
+   x="0"
+   height="5250"
+   width="7410"
+   id="rect14803" />
+    <g
+   id="g14805"
+   style="stroke: none;"> 
+      <g
+   id="g14807"
+   style="stroke: none;"> 
+        <use
+   height="9750"
+   width="18525"
+   y="0"
+   x="0"
+   xlink:href="#odd_star_row"
+   id="use14809"
+   style="stroke: none;" /> 
+        <use
+   height="9750"
+   width="18525"
+   y="0"
+   x="0"
+   xlink:href="#even_star_row"
+   id="use14811"
+   style="stroke: none;" /> 
+      </g> 
+      <use
+   height="9750"
+   width="18525"
+   x="0"
+   y="1050"
+   xlink:href="#star_rows_1-2"
+   id="use14813"
+   style="stroke: none;" /> 
+      <use
+   height="9750"
+   width="18525"
+   x="0"
+   y="2100"
+   xlink:href="#star_rows_1-2"
+   id="use14815"
+   style="stroke: none;" /> 
+      <use
+   height="9750"
+   width="18525"
+   x="0"
+   y="3150"
+   xlink:href="#star_rows_1-2"
+   id="use14817"
+   style="stroke: none;" /> 
+      <use
+   height="9750"
+   width="18525"
+   x="0"
+   y="4200"
+   xlink:href="#odd_star_row"
+   id="use14819"
+   style="stroke: none;" /> 
+    </g> 
+  </g><path
+   style="fill:#ff0000"
+   d="m 9259.813,1575.831 -475.1471,886.2094 c -53.9155,96.3162 -150.5159,87.3827 -247.1163,33.587 l -343.9938,-178.1266 256.3839,1361.1991 c 53.9155,248.6833 -119.0697,248.6833 -204.4387,141.157 l -600.3361,-672.0674 -97.4635,341.2918 c -11.2392,44.8189 -60.6563,91.8929 -134.7935,80.6828 l -759.1318,-159.6092 199.3909,724.909 c 42.6842,161.3004 75.979,228.0843 -43.0915,270.6265 l -270.5791,127.1713 1306.7963,1061.4739 c 51.7237,40.1353 77.8566,112.3617 59.4426,177.7578 l -114.3725,375.3342 c 449.9493,-51.866 853.1108,-129.897 1303.288,-177.9541 39.7414,-4.2425 106.2733,61.3425 106.0004,107.3974 l -59.6176,1375.0762 218.7676,0 -34.4366,-1372.1273 c -0.2744,-46.0548 60.084,-114.5888 99.8254,-110.3463 450.1771,48.0572 853.339,126.0881 1303.288,177.9541 l -114.372,-375.3342 c -18.414,-65.3961 7.719,-137.6225 59.443,-177.7578 l 1306.796,-1061.4739 -270.579,-127.1713 c -119.071,-42.5422 -85.776,-109.3261 -43.092,-270.6265 l 199.391,-724.909 -759.132,159.6092 c -74.137,11.2101 -123.554,-35.8639 -134.794,-80.6828 l -97.463,-341.2918 -600.336,672.0674 c -85.369,107.5263 -258.355,107.5263 -204.439,-141.157 l 256.384,-1361.1991 -343.9935,178.1266 c -96.6029,53.7957 -193.2009,62.7292 -247.1166,-33.587"
+   id="path2901" /></svg>
