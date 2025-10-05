@@ -33,7 +33,6 @@ const MonitorPage = {
                 translate = (translate + 10) % 200;
                 this.spinnerElement.style.transform = `translateX(${translate}px)`;
 
-                this.fetchContent("services/currentstate", "currentstate", "JSON");
             } else {
                 console.warn("Spinner element not found, trying to get it.");
             }
@@ -52,8 +51,6 @@ const MonitorPage = {
         }
         document.getElementById(elementId).innerHTML = data;
     }
-
-
 };
 
 // Initialize when DOM is loaded
