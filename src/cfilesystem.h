@@ -3,7 +3,7 @@
 #include "fs/css_customer_css.h"
 #include "fs/css_i18n_css.h"
 #include "fs/css_pages_css.h"
-#include "fs/css_test_styles_css.h"
+#include "fs/css_pico_conditional_min_css.h"
 #include "fs/i18n_de_json.h"
 #include "fs/i18n_en_json.h"
 #include "fs/i18n_kr_json.h"
@@ -19,10 +19,10 @@
 #include "fs/images_home_icon_png.h"
 #include "fs/index_html.h"
 #include "fs/js_diagnosispage_js.h"
-#include "fs/js_i18n_js.h"
 #include "fs/js_monitorpage_js.h"
-#include "fs/js_pages_js.h"
-#include "fs/js_test_jquery_js.h"
+#include "fs/js_pico_i18n_js.h"
+#include "fs/js_pico_pages_js.h"
+#include "fs/js_pico_theme_switcher_js.h"
 #include "fs/languagedemo_html.h"
 #include "fs/pagedemo_html.h"
 #include "fs/pages_diagnosispage_html.h"
@@ -43,7 +43,7 @@ const CFileEntry cFileSystem[] = {
     {"css/customer.css", css_customer_css, css_customer_css_len},
     {"css/i18n.css", css_i18n_css, css_i18n_css_len},
     {"css/pages.css", css_pages_css, css_pages_css_len},
-    {"css/test-styles.css", css_test_styles_css, css_test_styles_css_len},
+    {"css/pico.conditional.min.css", css_pico_conditional_min_css, css_pico_conditional_min_css_len},
     {"i18n/de.json", i18n_de_json, i18n_de_json_len},
     {"i18n/en.json", i18n_en_json, i18n_en_json_len},
     {"i18n/kr.json", i18n_kr_json, i18n_kr_json_len},
@@ -59,10 +59,10 @@ const CFileEntry cFileSystem[] = {
     {"images/home_icon.png", images_home_icon_png, images_home_icon_png_len},
     {"index.html", index_html, index_html_len},
     {"js/diagnosispage.js", js_diagnosispage_js, js_diagnosispage_js_len},
-    {"js/i18n.js", js_i18n_js, js_i18n_js_len},
     {"js/monitorpage.js", js_monitorpage_js, js_monitorpage_js_len},
-    {"js/pages.js", js_pages_js, js_pages_js_len},
-    {"js/test-jquery.js", js_test_jquery_js, js_test_jquery_js_len},
+    {"js/pico/i18n.js", js_pico_i18n_js, js_pico_i18n_js_len},
+    {"js/pico/pages.js", js_pico_pages_js, js_pico_pages_js_len},
+    {"js/pico/theme-switcher.js", js_pico_theme_switcher_js, js_pico_theme_switcher_js_len},
     {"languagedemo.html", languagedemo_html, languagedemo_html_len},
     {"pagedemo.html", pagedemo_html, pagedemo_html_len},
     {"pages/diagnosispage.html", pages_diagnosispage_html, pages_diagnosispage_html_len},
