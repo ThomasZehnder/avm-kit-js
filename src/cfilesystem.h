@@ -20,6 +20,7 @@
 #include "fs/index_html.h"
 #include "fs/js_diagnosispage_js.h"
 #include "fs/js_monitorpage_js.h"
+#include "fs/js_pico_connector_js.h"
 #include "fs/js_pico_i18n_js.h"
 #include "fs/js_pico_pages_js.h"
 #include "fs/js_pico_theme_switcher_js.h"
@@ -61,6 +62,7 @@ const CFileEntry cFileSystem[] = {
     {"index.html", index_html, index_html_len},
     {"js/diagnosispage.js", js_diagnosispage_js, js_diagnosispage_js_len},
     {"js/monitorpage.js", js_monitorpage_js, js_monitorpage_js_len},
+    {"js/pico/connector.js", js_pico_connector_js, js_pico_connector_js_len},
     {"js/pico/i18n.js", js_pico_i18n_js, js_pico_i18n_js_len},
     {"js/pico/pages.js", js_pico_pages_js, js_pico_pages_js_len},
     {"js/pico/theme-switcher.js", js_pico_theme_switcher_js, js_pico_theme_switcher_js_len},

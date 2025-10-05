@@ -41,32 +41,16 @@ const MonitorPage = {
             , 1000);
         console.log("Starting timer");
     },
-    fetchContent: function (serviceName, elementId, mode = "HTML") {
-        fetch(serviceName)
-            .then(response => {
-                //console.log("Fetch response:", response);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                if (mode === "JSON") {
-                    try {
-                        data = JSON.parse(data);
-                        data = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-                    } catch (e) {
-                        console.error("Failed to parse JSON:", e);
-                        document.getElementById(elementId).innerHTML = "<p style='color:red;'>Failed to parse JSON.</p>";
-                        return;
-                    }
-                }
-                document.getElementById(elementId).innerHTML = data;
-            })
-            .catch(error => {
-                console.error("Failed to load HTML:", error);
-                document.getElementById(elementId).innerHTML = "<p style='color:red;'>Failed to load content.</p>";
-            });
+    callbackData: function (data) {
+        const elementId = "currentstate";
+        try {
+            data = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        } catch (e) {
+            console.error("Failed to parse JSON:", e);
+            document.getElementById(elementId).innerHTML = "<p style='color:red;'>Failed to parse JSON.</p>";
+            return;
+        }
+        document.getElementById(elementId).innerHTML = data;
     }
 
 
@@ -75,9 +59,9 @@ const MonitorPage = {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     MonitorPage.init();
+    connector.addEventListener(MonitorPage.callbackData);
 });
 
-// Export namespace to window object if needed
-window.MonitorPage = MonitorPage;
 
+// Load the page content dynamically
 dynamicLoadPage("pages/monitorpage");
