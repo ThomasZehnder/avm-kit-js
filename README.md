@@ -15,15 +15,18 @@ Connect to WLAN, observe console to get IP Adress
 
 ## Flags loaded from
 
-geladen von https://hampusborgos.github.io/country-flags/
+geladen von <https://hampusborgos.github.io/country-flags/>
 
 git clone <git@github.com>:hampusborgos/country-flags.git
 
-## Todo
+## Check pico.css
 
-* rename include files
-* all in english
-* rething name of "avm-kit-js" library package
+load test-includes.html
+
+## Todo
 
 * next websocket demo (first fake with polling get-request)
 * add listener to websocket change event
+
+* rename include files
+* all in english
