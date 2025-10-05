@@ -29,6 +29,7 @@
 #include "fs/pages_monitorpage_html.h"
 #include "fs/pages_servicepage_html.h"
 #include "fs/pages_startpage_html.h"
+#include "fs/services_currentstate.h"
 #include "fs/services_filedirectory_html.h"
 #include "fs/services_messagelog_html.h"
 #include "fs/test_includes_html.h"
@@ -69,6 +70,7 @@ const CFileEntry cFileSystem[] = {
     {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
     {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
     {"pages/startpage.html", pages_startpage_html, pages_startpage_html_len},
+    {"services/currentstate", services_currentstate, services_currentstate_len},
     {"services/filedirectory.html", services_filedirectory_html, services_filedirectory_html_len},
     {"services/messagelog.html", services_messagelog_html, services_messagelog_html_len},
     {"test-includes.html", test_includes_html, test_includes_html_len},
