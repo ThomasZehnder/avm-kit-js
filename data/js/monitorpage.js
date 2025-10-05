@@ -33,7 +33,7 @@ const MonitorPage = {
                 translate = (translate + 10) % 200;
                 this.spinnerElement.style.transform = `translateX(${translate}px)`;
 
-                this.fetchContent("services/currentstate", "currentstate");
+                this.fetchContent("services/currentstate", "currentstate", "JSON");
             } else {
                 console.warn("Spinner element not found, trying to get it.");
             }
@@ -41,7 +41,7 @@ const MonitorPage = {
             , 1000);
         console.log("Starting timer");
     },
-        fetchContent: function (serviceName, elementId) {
+    fetchContent: function (serviceName, elementId, mode = "HTML") {
         fetch(serviceName)
             .then(response => {
                 //console.log("Fetch response:", response);
@@ -51,6 +51,16 @@ const MonitorPage = {
                 return response.text();
             })
             .then(data => {
+                if (mode === "JSON") {
+                    try {
+                        data = JSON.parse(data);
+                        data = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    } catch (e) {
+                        console.error("Failed to parse JSON:", e);
+                        document.getElementById(elementId).innerHTML = "<p style='color:red;'>Failed to parse JSON.</p>";
+                        return;
+                    }
+                }
                 document.getElementById(elementId).innerHTML = data;
             })
             .catch(error => {
