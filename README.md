@@ -23,6 +23,11 @@ git clone <git@github.com>:hampusborgos/country-flags.git
 
 load test-includes.html
 
+## test service to develop ui
+
+"/services/currentstate"
+{"counter":"14","ssid":"zhs_22_wil","ip":"192.168.1.197","rssi":-55,"mac":"50:02:91:DC:BF:79","x":2.52,"y":-0.48}
+
 ## Todo
 
 * next websocket demo (first fake with polling get-request)
