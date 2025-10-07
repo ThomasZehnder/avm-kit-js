@@ -9,9 +9,9 @@
   <title>Kleine Seite mit Pico.CSS</title>
 
   <!-- Stylesheet  -->
-  <link rel="stylesheet" href="css/pico.conditional.min.css" />  
+  <link rel="stylesheet" href="css/pico.conditional.min.css" />
   <link rel="stylesheet" href="css/customer.light.pico.css" />
- 
+
 
 
 </head>
@@ -23,9 +23,9 @@
       <h1>Pico</h1>
       <p>A class-less example, without dependencies.</p>
     </hgroup>
-    Auto  means get the theme from the system<br>
-    Light means always use the light theme<br>      
-    Dark  means always use the dark theme<br>
+    Auto means get the theme from the system<br>
+    Light means always use the light theme<br>
+    Dark means always use the dark theme<br>
     <nav>
       <ul>
         <li><a href="#" data-theme-switcher="auto">Auto</a></li>
@@ -60,7 +60,53 @@
       </form>
     </section>
     <!-- ./ Preview -->
-
+    <section id="table">
+      <h2>Table</h2>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th scope="col">Planet</th>
+            <th scope="col">Diameter (km)</th>
+            <th scope="col">Distance to Sun (AU)</th>
+            <th scope="col">Orbit (days)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Mercury</th>
+            <td>4,880</td>
+            <td>0.39</td>
+            <td>88</td>
+          </tr>
+          <tr>
+            <th scope="row">Venus</th>
+            <td>12,104</td>
+            <td>0.72</td>
+            <td>225</td>
+          </tr>
+          <tr>
+            <th scope="row">Earth</th>
+            <td>12,742</td>
+            <td>1.00</td>
+            <td>365</td>
+          </tr>
+          <tr>
+            <th scope="row">Mars</th>
+            <td>6,779</td>
+            <td>1.52</td>
+            <td>687</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Average</th>
+            <td>9,126</td>
+            <td>0.91</td>
+            <td>341</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
     <!-- Typography-->
     <section id="typography">
       <h2>Typography</h2>
@@ -158,10 +204,15 @@
         <small>Curabitur consequat lacus at lacus porta finibus.</small>
 
         <!-- Select -->
-        <label for="select">Select</label>
-        <select id="select" name="select" required>
-          <option value="" selected>Select…</option>
-          <option>…</option>
+        <select name="favorite-cuisine" aria-label="Select your favorite cuisine..." required>
+          <option selected disabled value="">
+            Select your favorite cuisine...
+          </option>
+          <option>Italian</option>
+          <option>Japanese</option>
+          <option>Indian</option>
+          <option>Thai</option>
+          <option>French</option>
         </select>
 
         <!-- File browser -->
@@ -348,7 +399,7 @@
   </dialog>
   <!-- ./ Modal example -->
 
-    <!-- Minimal theme switcher include at the end -->
+  <!-- Minimal theme switcher include at the end -->
   <script src="js/pico/theme-switcher.js"></script>
 </body>
 

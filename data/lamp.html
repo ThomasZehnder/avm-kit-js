@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<style>
+/* Verstecke das originale Radio-Element */
+input[type="radio"].lamp {
+    display: none;
+}
+
+/* Stil für die Lampe */
+.lamp-label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #555; /* aus / dunkelgrau */
+    box-shadow: 0 0 5px #000 inset;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Farbe abhängig vom lamp-color Attribut */
+.lamp-label[lamp-color="red"] {
+    background-color: red;
+}
+.lamp-label[lamp-color="orange"] {
+    background-color: orange;
+}
+.lamp-label[lamp-color="green"] {
+    background-color: green;
+    /* Leuchten wenn aktiviert */
+input[type="radio"].lamp:checked + .lamp-label[lamp-color="red"] {
+    background-color: rgb(242, 67, 67);
+    box-shadow: 0 0 15px rgb(27, 16, 16);
+}
+input[type="radio"].lamp:checked + .lamp-label[lamp-color="orange"] {
+    background-color: rgb(234, 185, 93);
+    box-shadow: 0 0 15px rgb(87, 76, 55);
+}
+input[type="radio"].lamp:checked + .lamp-label[lamp-color="green"] {
+    background-color: limegreen;
+    box-shadow: 0 0 15px limegreen;
+}
+</style>
+</head>
+<body>
+
+<h3>Lampen-Radio Buttons</h3>
+
+
+<input type="radio" id="red-lamp" name="lamp" class="lamp">
+<label for="red-lamp" class="lamp-label" lamp-color="red"></label>
+
+<input type="radio" id="orange-lamp" name="lamp" class="lamp">
+<label for="orange-lamp" class="lamp-label" lamp-color="orange"></label>
+
+<input type="radio" id="green-lamp" name="lamp" class="lamp">
+<label for="green-lamp" class="lamp-label" lamp-color="green"></label>
+
+</body>
+</html>
