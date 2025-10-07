@@ -1,0 +1,21 @@
+/*  Light Theme (für Pico.css) */
+
+/*see https://picocss.com/docs/css-variables */
+
+[data-theme=light],
+:root:not([data-theme=dark]),
+:host(:not([data-theme=dark])) {
+  /* Grundfarben */
+  --pico-background-color: #d1e1e4;
+  --pico-color: #333333;
+  --pico-primary-hover-background: #115869;
+  --pico-primary-focus: rgba(0, 102, 179, 0.25);
+  --pico-primary-inverse: rgb(243, 223, 223);
+
+  /* Flächen */
+  --pico-primary-background: #1d819b;
+  --pico-card-background: #f5f7fa;
+
+
+
+}
