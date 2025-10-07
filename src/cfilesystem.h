@@ -1,6 +1,7 @@
 // Auto-generated main filesystem header
 
 #include "fs/css_customer_css.h"
+#include "fs/css_customer_light_pico_css.h"
 #include "fs/css_i18n_css.h"
 #include "fs/css_pages_css.h"
 #include "fs/css_pico_conditional_min_css.h"
@@ -43,6 +44,7 @@ typedef struct {
 
 const CFileEntry cFileSystem[] = {
     {"css/customer.css", css_customer_css, css_customer_css_len},
+    {"css/customer.light.pico.css", css_customer_light_pico_css, css_customer_light_pico_css_len},
     {"css/i18n.css", css_i18n_css, css_i18n_css_len},
     {"css/pages.css", css_pages_css, css_pages_css_len},
     {"css/pico.conditional.min.css", css_pico_conditional_min_css, css_pico_conditional_min_css_len},
