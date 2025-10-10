@@ -36,13 +36,13 @@ class PageManager {
     this.changePage("main");
   }
 
-  changePage(name) {
+  async changePage(name) {
     if (this.currentPage && this.pages[this.currentPage]) {
       this.pages[this.currentPage].div.classList.remove("active");
     }
     if (this.pages[name]) {
       if (this.pages[name].accessLevel > this.accessLevel) {
-        const password = prompt("Enter password to access this page:"); // Simple password prompt
+        const password = await getPasswordDialog();
         if (password !== this.password) { // Check password
           alert("Incorrect password!");
           this.changePage("main"); // go back to main page
@@ -56,6 +56,46 @@ class PageManager {
       console.log(`Change to page "${name}"`);
     } else {
       console.warn(`Page "${name}" not found!`);
+    }
+
+    async function getPasswordDialog() {
+      const modalHTML = `
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+        background: white; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+          <h3 style="margin-bottom: 10px;">Enter Password</h3>
+          <input type="password" style="width: 200px; padding: 5px;">
+        </div>`;
+      const container = document.createElement('div');
+      container.innerHTML = modalHTML;
+      const modalDiv = container.querySelector('div');
+      const buttonsDiv = document.createElement('div');
+      buttonsDiv.style.marginTop = '10px';
+      buttonsDiv.style.textAlign = 'right';
+      
+      const okButton = document.createElement('button');
+      okButton.textContent = 'OK';
+      okButton.style.marginRight = '10px';
+      
+      const cancelButton = document.createElement('button');
+      cancelButton.textContent = 'Cancel';
+      
+      buttonsDiv.appendChild(okButton);
+      buttonsDiv.appendChild(cancelButton);
+      modalDiv.appendChild(buttonsDiv);
+      
+      const tmpInput = container.querySelector('input');
+      document.body.appendChild(container);
+      
+      tmpInput.focus();
+      const password = await new Promise(resolve => {
+        okButton.onclick = () => resolve(tmpInput.value);
+        cancelButton.onclick = () => resolve(null);
+        tmpInput.onkeyup = (e) => {
+          if (e.key === 'Enter') resolve(tmpInput.value);
+        };
+      });
+      document.body.removeChild(container);
+      return password;
     }
   }
 
