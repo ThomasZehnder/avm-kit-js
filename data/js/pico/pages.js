@@ -17,8 +17,9 @@ class PageManager {
     this.pages = {}; // Reset pages object
     document.querySelectorAll("[page]").forEach(div => {
       const name = div.getAttribute("page");
-      const accessLevel = div.getAttribute("acessLevel") || 0;
+      const accessLevel = div.getAttribute("accesslevel") || 0;
       this.pages[name] = { "div": div, "accessLevel": accessLevel };
+      console.log(`Found page: "${name}" with access level ${accessLevel}`);
       div.classList.remove("active");
     });
     console.log("Pages found:", Object.keys(this.pages));
@@ -48,7 +49,7 @@ class PageManager {
       const pageDiv = document.createElement("div");
       pageDiv.classList.add("pageContainer");
       pageDiv.setAttribute("page", pageName);
-      pageDiv.setAttribute("accessLevel", accessLevel);
+      pageDiv.setAttribute("accesslevel", accessLevel);
       pageDiv.innerHTML = html;
 
       const container = document.getElementById("pagesContainer");

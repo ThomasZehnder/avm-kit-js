@@ -14,7 +14,7 @@ class Connector {
                 const response = await fetch('services/currentstate');
                 if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
                 const data = await response.json();
-                console.log('Fetched JSON data:', data);
+                //console.log('Fetched JSON data:', data);
                 this._notifyListeners(data); // Notify all registered listeners
             } catch (error) {
                 console.error('Error during polling:', error);

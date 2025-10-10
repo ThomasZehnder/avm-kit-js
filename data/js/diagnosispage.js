@@ -66,4 +66,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export namespace to window object if needed
 window.DiagnosisPage = DiagnosisPage;
 
-dynamicLoadPage("pages/diagnosispage");
+dynamicLoadPage("pages/diagnosispage",1); // Access level 1
