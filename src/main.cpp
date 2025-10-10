@@ -94,8 +94,13 @@ void handleFileDirectory() {
 
 
 int counter = 0;
+bool toggle = false;
+
 void handleCurrentState() {
   counter++;
+  toggle = !toggle; 
+  digitalWrite(LED_BUILTIN, toggle ? LOW : HIGH); // LED an/aus
+
   String json = "{";
   json += "\"counter\":\"" + String(counter) + "\",";
   json += "\"ssid\":\"" + WiFi.SSID() + "\",";
@@ -153,6 +158,9 @@ void setup() {
   // Webserver starten
   server.begin();
   mySerial.println("HTTP server started.");
+
+  // Builtin LED als Ausgang
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
