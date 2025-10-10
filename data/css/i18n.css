@@ -1,14 +1,4 @@
-/* Dropdown fest oben rechts -100px positionieren */
-  #language-selector {
-    position: fixed;
-    top: 10px;
-    right: 110px;
-    padding: 5px 10px;
-    font-size: 14px;
-    z-index: 1000; /* sicherstellen, dass es oben bleibt */
-  }
-
-    /* Button fest oben rechts */
+  /* Button fest oben rechts */
   #lang-button {
     position: fixed;
     top: 10px;
