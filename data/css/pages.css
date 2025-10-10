@@ -6,17 +6,6 @@
       display: block;
     }
 
-    /* Dropdown fest oben links -100px positionieren */
-    #logout-button-container {
-      position: fixed;
-      top: 10px;
-      left: 20px;
-      padding: 5px 10px;
-      font-size: 14px;
-      z-index: 1000;
-      /* sicherstellen, dass es oben bleibt */
-    }
-
     /* Button fest links rechts */
     #logout-button {
       position: fixed;

@@ -9,11 +9,11 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/i18n.css" />
   <link rel="stylesheet" href="css/pages.css" />
-  <link rel="stylesheet" href="css/pico.conditional.min.css" />  
+  <link rel="stylesheet" href="css/pico.conditional.min.css" />
   <link rel="stylesheet" href="css/customer.light.pico.css" />
- 
+
   <link rel="stylesheet" href="css/customer.css" />
-  
+
   <script src="js/pico/pages.js"></script>
 
 </head>
@@ -31,8 +31,8 @@
   <!--container to add html pages dynamicaly-->
   <div id="pagesContainer"></div>
   <script>dynamicLoadPage("pages/startpage");</script>
-  <script>dynamicLoadPage("pages/servicepage",1);</script> <!-- level 1 = password protected -->
-  
+  <script>dynamicLoadPage("pages/servicepage", 1);</script> <!-- level 1 = password protected -->
+
   <!--container to add js and html pages dynamicaly-->
   <script src="js/monitorpage.js"></script>
   <script src="js/diagnosispage.js"></script>
@@ -46,11 +46,14 @@
   <div id="lang-dialog">
     <img src="" alt="Flag">
   </div>
-  <!-- Logout button container -->
-  <div id="logout-button-container"></div>
+  <!-- Logout button  -->
+  <button id="logout-button">
+    <img class="icon" src="images/logout_icon.svg">
+  </button>
+
 
   <footer>
-        <div class="left">
+    <div class="left">
       <button id="diagnose-button" onclick="changePage('main')">
         <img class="icon" src="images/home_icon.png">
       </button>

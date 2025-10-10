@@ -99,19 +99,11 @@ class PageManager {
   }
 
   appendLogoutButton() {
-    const nav = document.getElementById("logout-button-container");
-    if (nav) {
-      const button = document.createElement("button");
-      button.id = "logout-button";
-      button.classList.add("logout-button");
-      button.onclick = this.logOut.bind(this);
-      const img = document.createElement("img");
-      img.src = "images/logout_icon.svg";
-      img.classList.add( "icon");
-      button.appendChild(img);
-      nav.appendChild(button);
-      nav.style.display = "none";
-      return nav;
+    const logoutButton = document.getElementById("logout-button");
+    if (logoutButton) {
+      logoutButton.style.display = "none";
+      logoutButton.addEventListener('click', this.logOut.bind(this));
+      return logoutButton;
     } else {
       console.warn("Logout button container not found.");
     }
