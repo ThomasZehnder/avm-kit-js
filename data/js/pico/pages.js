@@ -32,6 +32,13 @@ class PageManager {
       this.pages[this.currentPage].div.classList.remove("active");
     }
     if (this.pages[name]) {
+      if (this.pages[name].accessLevel > 0) {
+        const password = prompt("Enter password to access this page:"); // Simple password prompt
+        if (password !== "admin") { // Replace "admin" with your desired password
+          alert("Incorrect password!");
+          return;
+        } // else correct password, continue
+      }
       this.pages[name].div.classList.add("active");
       this.currentPage = name;
       console.log(`Change to page "${name}"`);
