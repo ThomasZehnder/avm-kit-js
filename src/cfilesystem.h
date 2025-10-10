@@ -18,6 +18,7 @@
 #include "fs/images_flags_kr_svg.h"
 #include "fs/images_globe_icon_svg.h"
 #include "fs/images_home_icon_png.h"
+#include "fs/images_logout_icon_svg.h"
 #include "fs/index_html.h"
 #include "fs/js_diagnosispage_js.h"
 #include "fs/js_monitorpage_js.h"
@@ -25,6 +26,7 @@
 #include "fs/js_pico_i18n_js.h"
 #include "fs/js_pico_pages_js.h"
 #include "fs/js_pico_theme_switcher_js.h"
+#include "fs/lamp_html.h"
 #include "fs/languagedemo_html.h"
 #include "fs/pagedemo_html.h"
 #include "fs/pages_diagnosispage_html.h"
@@ -33,6 +35,7 @@
 #include "fs/pages_startpage_html.h"
 #include "fs/services_currentstate.h"
 #include "fs/services_filedirectory_html.h"
+#include "fs/services_getpassword.h"
 #include "fs/services_messagelog_html.h"
 #include "fs/test_includes_html.h"
 
@@ -61,6 +64,7 @@ const CFileEntry cFileSystem[] = {
     {"images/flags/kr.svg", images_flags_kr_svg, images_flags_kr_svg_len},
     {"images/globe_icon.svg", images_globe_icon_svg, images_globe_icon_svg_len},
     {"images/home_icon.png", images_home_icon_png, images_home_icon_png_len},
+    {"images/logout_icon.svg", images_logout_icon_svg, images_logout_icon_svg_len},
     {"index.html", index_html, index_html_len},
     {"js/diagnosispage.js", js_diagnosispage_js, js_diagnosispage_js_len},
     {"js/monitorpage.js", js_monitorpage_js, js_monitorpage_js_len},
@@ -68,6 +72,7 @@ const CFileEntry cFileSystem[] = {
     {"js/pico/i18n.js", js_pico_i18n_js, js_pico_i18n_js_len},
     {"js/pico/pages.js", js_pico_pages_js, js_pico_pages_js_len},
     {"js/pico/theme-switcher.js", js_pico_theme_switcher_js, js_pico_theme_switcher_js_len},
+    {"lamp.html", lamp_html, lamp_html_len},
     {"languagedemo.html", languagedemo_html, languagedemo_html_len},
     {"pagedemo.html", pagedemo_html, pagedemo_html_len},
     {"pages/diagnosispage.html", pages_diagnosispage_html, pages_diagnosispage_html_len},
@@ -76,6 +81,7 @@ const CFileEntry cFileSystem[] = {
     {"pages/startpage.html", pages_startpage_html, pages_startpage_html_len},
     {"services/currentstate", services_currentstate, services_currentstate_len},
     {"services/filedirectory.html", services_filedirectory_html, services_filedirectory_html_len},
+    {"services/getpassword", services_getpassword, services_getpassword_len},
     {"services/messagelog.html", services_messagelog_html, services_messagelog_html_len},
     {"test-includes.html", test_includes_html, test_includes_html_len},
 };
