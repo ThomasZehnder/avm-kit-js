@@ -1,64 +1,61 @@
-(function () {
-  let pages = {};
-  let currentPage = null;
+class PageManager {
+  constructor() {
+    this.pages = {};
+    this.currentPage = null;
 
-  // Initialisierung nach DOM-Load
-  window.addEventListener("DOMContentLoaded", () => {
-    this.refreshPageList();
-
-  });
-
-  refreshPageList = function () {
-    pages = {}; // Reset pages object
-    document.querySelectorAll("[page]").forEach(div => {
-      const name = div.getAttribute("page");    
-      pages[name] = div;
-      div.classList.remove("active");
+    // Init after DOM loaded
+    window.addEventListener("DOMContentLoaded", () => {
+      this.refreshPageList();
     });
-    console.log("Pages found:", Object.keys(pages));
-    // start on main page if exists
-    changePage("main");
+
+    // expose global functions (bound to this instance)
+    window.changePage = this.changePage.bind(this);
+    window.dynamicLoadPage = this.dynamicLoadPage.bind(this);
   }
 
-  // global Funktion
-  window.changePage = function (name) {
-    if (currentPage && pages[currentPage]) {
-      pages[currentPage].classList.remove("active");
+  refreshPageList() {
+    this.pages = {}; // Reset pages object
+    document.querySelectorAll("[page]").forEach(div => {
+      const name = div.getAttribute("page");
+      const accessLevel = div.getAttribute("acessLevel") || 0;
+      this.pages[name] = { "div": div, "accessLevel": accessLevel };
+      div.classList.remove("active");
+    });
+    console.log("Pages found:", Object.keys(this.pages));
+    // start on main page if exists
+    this.changePage("main");
+  }
+
+  changePage(name) {
+    if (this.currentPage && this.pages[this.currentPage]) {
+      this.pages[this.currentPage].div.classList.remove("active");
     }
-    if (pages[name]) {
-      pages[name].classList.add("active");
-      currentPage = name;
+    if (this.pages[name]) {
+      this.pages[name].div.classList.add("active");
+      this.currentPage = name;
       console.log(`Change to page "${name}"`);
     } else {
       console.warn(`Page "${name}" not found!`);
     }
-  };
+  }
 
-
-  //content loader
-  window.dynamicLoadPage = async function (pageName) {
+  async dynamicLoadPage(pageName, accessLevel = 0) {
     try {
-      // Fetch the HTML fragment, e.g. "servicePage.html"
       const response = await fetch(`${pageName}.html`);
-      if (!response.ok) {
-        throw new Error(`Failed to load: ${response.statusText}`);
-      }
-
+      if (!response.ok) throw new Error(`Failed to load: ${response.statusText}`);
       const html = await response.text();
 
-      // Create a new div to hold the loaded content
       const pageDiv = document.createElement("div");
-      pageDiv.classList.add("pageContainer");  // optional CSS class
-      pageDiv.setAttribute("page", pageName); // <div page="main"> etc.
+      pageDiv.classList.add("pageContainer");
+      pageDiv.setAttribute("page", pageName);
+      pageDiv.setAttribute("accessLevel", accessLevel);
       pageDiv.innerHTML = html;
 
-      // Append it to the container
       const container = document.getElementById("pagesContainer");
       container.appendChild(pageDiv);
 
       this.refreshPageList();
       console.log(`Page '${pageName}' loaded successfully.`);
-
     } catch (err) {
       console.error(err);
       const errorDiv = document.createElement("div");
@@ -67,6 +64,7 @@
       document.getElementById("pagesContainer").appendChild(errorDiv);
     }
   }
+}
 
-
-})();
+// instantiate
+new PageManager();
