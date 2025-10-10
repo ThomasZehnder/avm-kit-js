@@ -4,17 +4,20 @@ class PageManager {
     this.currentPage = null;
     this.accessLevel = 0; // default access level 0 = no password
     this.password = "admin"; // default password, change as needed
+    this.logOutDiv = null;
 
     // Init after DOM loaded
     window.addEventListener("DOMContentLoaded", () => {
       this.refreshPageList();
+      // Add logout button
+      this.logOutDiv = this.appendLogoutButton();
     });
 
     // expose global functions (bound to this instance)
     window.changePage = this.changePage.bind(this);
     window.dynamicLoadPage = this.dynamicLoadPage.bind(this);
-    window.logOut = this.logOut.bind(this); 
-    
+    window.logOut = this.logOut.bind(this);
+
     // Fetch password from server
     this.fetchPassword();
   }
@@ -46,6 +49,7 @@ class PageManager {
           return;
         } // else correct password, continue
         this.accessLevel = 1;// store access level
+        this.logOutDiv.style.display = "block";
       }
       this.pages[name].div.classList.add("active");
       this.currentPage = name;
@@ -53,11 +57,6 @@ class PageManager {
     } else {
       console.warn(`Page "${name}" not found!`);
     }
-  }
-
-  logOut() {
-    this.accessLevel = 0; // reset access level
-    this.changePage("main"); // go back to main page
   }
 
   async dynamicLoadPage(pageName, accessLevel = 0) {
@@ -97,10 +96,29 @@ class PageManager {
       console.error(err);
       this.password = "admin"; // fallback password
     }
+  }
 
+  appendLogoutButton() {
+    const nav = document.getElementById("logout-button-container");
+    if (nav) {
+      const button = document.createElement("button");
+      button.textContent = "Log Out";
+      button.classList.add("logout-button");
+      button.onclick = this.logOut.bind(this);
+      nav.appendChild(button);
+      nav.style.display = "none";
+      return nav;
+    } else {
+      console.warn("Logout button container not found.");
+    }
+  }
+
+  logOut() {
+    this.accessLevel = 0; // reset access level
+    this.changePage("main"); // go back to main page
+    this.logOutDiv.style.display = "none";
   }
 }
-
 // instantiate
 new PageManager();
 
