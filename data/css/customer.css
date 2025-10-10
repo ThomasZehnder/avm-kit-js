@@ -30,9 +30,9 @@ h2 {
     margin: 0 auto;
     /* zentriert im übergeordneten Container */
     border-radius: 20px;
-        font-size: 18px;
-        min-height: 30px;
-padding-top: 5px;
+    font-size: 18px;
+    min-height: 30px;
+    padding-top: 5px;
 }
 
 button.navigate {
@@ -67,15 +67,15 @@ footer {
     /* Full width */
     height: 80px;
     /* Fixed height */
-    background-color: #333;
+
     /* Example color */
-    color: white;
+    color: #333333;
     /* Text color */
     display: flex;
     /* Center content */
     align-items: center;
     justify-content: center;
-    min-width:100%;
+    min-width: 100%;
 }
 
 .centered {
@@ -97,4 +97,16 @@ footer {
 .right {
     margin-left: auto;
     margin-right: 10px;
+}
+
+.circle {
+    padding: 5px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.circle:hover {
+    background: #f0f0f0;
 }
