@@ -4,3 +4,32 @@
     [page].active {
       display: block;
     }
+
+    /* Dropdown fest oben links -100px positionieren */
+  #logout-button-container {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    z-index: 1000; /* sicherstellen, dass es oben bleibt */
+  }
+
+      /* Button fest links rechts */
+  #logout-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }

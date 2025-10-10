@@ -102,9 +102,13 @@ class PageManager {
     const nav = document.getElementById("logout-button-container");
     if (nav) {
       const button = document.createElement("button");
-      button.textContent = "Log Out";
+      button.id = "logout-button";
       button.classList.add("logout-button");
       button.onclick = this.logOut.bind(this);
+      const img = document.createElement("img");
+      img.src = "images/logout_icon.svg";
+      img.classList.add( "icon");
+      button.appendChild(img);
       nav.appendChild(button);
       nav.style.display = "none";
       return nav;
