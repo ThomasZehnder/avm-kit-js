@@ -30,6 +30,7 @@
 #include "fs/languagedemo_html.h"
 #include "fs/pagedemo_html.h"
 #include "fs/pages_diagnosispage_html.h"
+#include "fs/pages_loginpage_html.h"
 #include "fs/pages_monitorpage_html.h"
 #include "fs/pages_servicepage_html.h"
 #include "fs/pages_startpage_html.h"
@@ -76,6 +77,7 @@ const CFileEntry cFileSystem[] = {
     {"languagedemo.html", languagedemo_html, languagedemo_html_len},
     {"pagedemo.html", pagedemo_html, pagedemo_html_len},
     {"pages/diagnosispage.html", pages_diagnosispage_html, pages_diagnosispage_html_len},
+    {"pages/loginpage.html", pages_loginpage_html, pages_loginpage_html_len},
     {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
     {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
     {"pages/startpage.html", pages_startpage_html, pages_startpage_html_len},

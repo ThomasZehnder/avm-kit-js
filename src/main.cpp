@@ -6,7 +6,9 @@
 
 
 const char* ssid = __SSID;
-const char* password = __PASSWORD;
+const char* wlanPassword = __WLAN_PASSWORD;
+
+String appPassword = __APP_PASSWORD;
 
 ESP8266WebServer server(80);
 
@@ -114,6 +116,15 @@ void handleCurrentState() {
   server.send(200, "application/json", json);
 }
 
+void handleGetPassword() {
+
+  String json = "{";
+  json += "\"password\":\""+appPassword+"\"";
+  json += "}";
+
+  server.send(200, "application/json", json);
+}
+
 void setup() {
   Serial.begin(115200);
   delay(500);
@@ -137,7 +148,7 @@ void setup() {
   mySerial.print("Connecting to WiFi: ");
   mySerial.print(ssid);
   mySerial.println(" ...");
-  WiFi.begin(ssid, password);
+  WiFi.begin(ssid, wlanPassword);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -153,6 +164,7 @@ void setup() {
   server.on("/services/messagelog.html", handleMessageLog);  // Add new route
   server.on("/services/filedirectory.html", handleFileDirectory);  // Add new route
   server.on("/services/currentstate", handleCurrentState);  // Add new route
+  server.on("/services/getpassword", handleGetPassword);  // Add new route
   server.onNotFound(handleFile);
 
   // Webserver starten
