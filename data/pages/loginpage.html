@@ -7,9 +7,15 @@
         background: white;
         padding: 20px;
         border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         min-width: 33%;
+    }
+    
+    #login-container div {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
     }
 
     #login-container h3 {
@@ -17,13 +23,21 @@
     }
 
     #login-container input {
-        width: 200px;
+        min-width: 200px;
+        width: calc(100% - 40px);
         padding: 5px;
     }
 
     #login-ok-button {
-        margin-right: 10px;
+        margin-left: 20px;
+        margin-right: auto;
     }
+
+    #login-cancel-button {
+        margin-right: 20px;
+        margin-left: auto;
+    }
+
 </style>
 
 <div id="login-container">
