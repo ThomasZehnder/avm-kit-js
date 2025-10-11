@@ -2,7 +2,7 @@
   "title": "Hello",
   "description": "This is a test paragraph.",
   "id-test-missing-in-ko": "This key is missing in the Korean translation file.",
-    "global.home": "Home Page",
+    "global.home": "Home",
     "global.exit": "Exit",
     "global.ok": "Ok",
     "global.cancel": "Cancel",
