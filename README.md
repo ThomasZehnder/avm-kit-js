@@ -19,6 +19,10 @@ geladen von <https://hampusborgos.github.io/country-flags/>
 
 git clone <git@github.com>:hampusborgos/country-flags.git
 
+## Icons ins SVG
+
+see: <https://www.svgviewer.dev/s/490702/world>
+
 ## Check pico.css
 
 load test-includes.html
