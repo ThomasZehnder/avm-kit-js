@@ -26,7 +26,7 @@ class PageManager {
     this.pages = {}; // Reset pages object
     document.querySelectorAll("[page]").forEach(div => {
       const name = div.getAttribute("page");
-      const accessLevel = div.getAttribute("accesslevel") || 0;
+      const accessLevel = Number(div.getAttribute("accesslevel")) || 0;
       this.pages[name] = { "div": div, "accessLevel": accessLevel };
       console.log(`Found page: "${name}" with access level ${accessLevel}`);
       div.classList.remove("active");
@@ -37,54 +37,48 @@ class PageManager {
   }
 
   async changePage(name) {
+    console.log(`Navigate to page check accesslevel "${name}"`);
+
+    //hide old page
     if (this.currentPage && this.pages[this.currentPage]) {
       this.pages[this.currentPage].div.classList.remove("active");
     }
+
     if (this.pages[name]) {
-      if (this.pages[name].accessLevel > this.accessLevel) {
+      if ((this.pages[name].accessLevel > this.accessLevel) || (this.pages[name].accessLevel === 255)) {
+
+        //force to show login page
+        this.pages["pages/loginpage"].div.classList.add("active");
+
         const password = await getPasswordDialog();
+
+        //force to hide login page
+        this.pages["pages/loginpage"].div.classList.remove("active");
+        
         if (password !== this.password) { // Check password
           alert("Incorrect password!");
           this.changePage("main"); // go back to main page
           return;
         } // else correct password, continue
-        this.accessLevel = 1;// store access level
+        this.accessLevel = this.pages[name].accessLevel;// store access level
         this.logOutDiv.style.display = "block";
+        if (name === "pages/loginpage") name = "main"; //show main
       }
+
       this.pages[name].div.classList.add("active");
       this.currentPage = name;
-      console.log(`Change to page "${name}"`);
+      console.log(`Change to page definitly "${name}"`);
     } else {
       console.warn(`Page "${name}" not found!`);
     }
 
     async function getPasswordDialog() {
-      const modalHTML = `
-        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-        background: white; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-          <h3 style="margin-bottom: 10px;">Enter Password</h3>
-          <input type="password" style="width: 200px; padding: 5px;">
-          <div>
-        <button style="margin-right: 10px;">OK</button>
-        <button data-i18n="global.home">Cancel</button>
-          </div>
-        </div>`;
 
-      const container = document.createElement('div');
-      container.innerHTML = modalHTML;
-      const modalDiv = container.querySelector('div');
-      const buttonsDiv = modalDiv.querySelector('div');
-      const okButton = buttonsDiv.querySelector('button:first-child');
-      const cancelButton = buttonsDiv.querySelector('button:last-child');
-      
-      buttonsDiv.appendChild(okButton);
-      buttonsDiv.appendChild(cancelButton);
-      modalDiv.appendChild(buttonsDiv);
-      
-      const tmpInput = container.querySelector('input');
-      document.body.appendChild(container);
-    
-      
+      const okButton = document.getElementById("login-ok-button");
+      const cancelButton = document.getElementById("login-cancel-button");
+      const tmpInput = document.getElementById("login-input");
+      tmpInput.value = ""; //remove old password
+
       tmpInput.focus();
       const password = await new Promise(resolve => {
         okButton.onclick = () => resolve(tmpInput.value);
@@ -93,7 +87,7 @@ class PageManager {
           if (e.key === 'Enter') resolve(tmpInput.value);
         };
       });
-      document.body.removeChild(container);
+
       return password;
     }
   }

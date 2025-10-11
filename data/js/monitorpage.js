@@ -22,6 +22,7 @@ const MonitorPage = {
 
     // Add other methods
     startTimer: function () {
+        return;//disable timer for better debugging
 
         let translate = 0;
         setInterval(() => {
