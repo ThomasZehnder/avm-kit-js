@@ -20,43 +20,43 @@
 
 <body>
 
+  <main>
 
 
-
-  <!--container to add html pages dynamicaly-->
-  <div id="pagesContainer">
-    <!-- Simple Page Switch Demo -->
-    <div page="main">
-      <h1>Main Page As Demo</h1>
-      <button class="navigate" data-i18n="global.home" onclick="changePage('pages/startpage')">Go Main</button>
-      <button class="navigate" onclick="changePage('pages/monitorpage')">Go to Monitor Page</button>
-      <button class="navigate" onclick="changePage('pages/servicepage')">Service Page (with login)</button>
-      <button class="navigate" onclick="changePage('pages/loginpage')">Login</button>
+    <!--container to add html pages dynamicaly-->
+    <div id="pagesContainer">
+      <!-- Simple Page Switch Demo -->
+      <div page="main">
+        <h1>Main Page As Demo</h1>
+        <button class="navigate" data-i18n="global.home" onclick="changePage('pages/startpage')">Go Main</button>
+        <button class="navigate" onclick="changePage('pages/monitorpage')">Go to Monitor Page</button>
+        <button class="navigate" onclick="changePage('pages/servicepage')">Service Page (with login)</button>
+        <button class="navigate" onclick="changePage('pages/loginpage')">Login</button>
+      </div>
     </div>
-  </div>
-  <script>dynamicLoadPage("pages/startpage");</script>
-  <script>dynamicLoadPage("pages/servicepage", 1);</script> <!-- level 1 = password protected -->
-  <script>dynamicLoadPage("pages/loginpage", 255)</script> <!-- level 255 = force to showlogin dialog-->
+    <script>dynamicLoadPage("pages/startpage");</script>
+    <script>dynamicLoadPage("pages/servicepage", 1);</script> <!-- level 1 = password protected -->
+    <script>dynamicLoadPage("pages/loginpage", 255)</script> <!-- level 255 = force to showlogin dialog-->
 
-  <!--container to add js and html pages dynamicaly-->
-  <script src="js/monitorpage.js"></script>
-  <script src="js/diagnosispage.js"></script>
-
-
-  <!-- language selector fix positioned with css in the upper right corner-->
-  <button id="lang-button">
-    <img class="icon" src="images/globe_icon.svg">
-  </button>
-  <!-- Overlay-Dialog for the language-->
-  <div id="lang-dialog">
-    <img src="" alt="Flag">
-  </div>
-  <!-- Logout button  -->
-  <button id="logout-button">
-    <img class="icon" src="images/logout_icon.svg">
-  </button>
+    <!--container to add js and html pages dynamicaly-->
+    <script src="js/monitorpage.js"></script>
+    <script src="js/diagnosispage.js"></script>
 
 
+    <!-- language selector fix positioned with css in the upper right corner-->
+    <button id="lang-button">
+      <img class="icon" src="images/globe_icon.svg">
+    </button>
+    <!-- Overlay-Dialog for the language-->
+    <div id="lang-dialog">
+      <img src="" alt="Flag">
+    </div>
+    <!-- Logout button  -->
+    <button id="logout-button">
+      <img class="icon" src="images/logout_icon.svg">
+    </button>
+
+  </main>
   <footer>
     <div class="left">
       <button id="diagnose-button" onclick="changePage('main')" class="circle">
