@@ -28,7 +28,7 @@ class PageManager {
       const name = div.getAttribute("page");
       const accessLevel = Number(div.getAttribute("accesslevel")) || 0;
       this.pages[name] = { "div": div, "accessLevel": accessLevel };
-      console.log(`Found page: "${name}" with access level ${accessLevel}`);
+      //console.log(`Found page: "${name}" with access level ${accessLevel}`);
       div.classList.remove("active");
     });
     console.log("Pages found:", Object.keys(this.pages));
