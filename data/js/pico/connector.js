@@ -8,7 +8,7 @@ class Connector {
 
     // Starts polling every 500ms
     init() {
-        return;//disable timer for better debugging
+        
         if (this.timer) return; // Timer already running
         this.timer = setInterval(async () => {
             try {
