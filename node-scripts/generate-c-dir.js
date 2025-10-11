@@ -1,5 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { minify: minifyHTML } = require('html-minifier-terser');
+const CleanCSS = require('clean-css');
+const Terser = require('terser');
 
 const inputDir = 'data';          // Quelle
 const outputSrcDir = 'src';       // Hauptordner für generierte H-Files
@@ -18,9 +21,16 @@ function sanitizeVariableName(name) {
 }
 
 // Einzel-H-File erzeugen
-function createFileHeader(filePath, relativePath) {
-    const data = fs.readFileSync(filePath);
+async function createFileHeader(filePath, relativePath) {
+
     const varName = sanitizeVariableName(relativePath);
+    data = fs.readFileSync(filePath);
+    const original = data.toString('utf8');
+
+    //minify-files
+    //minified = await minify(varName, original);
+
+    //data = Buffer.from(minified, 'utf8');
 
     let content = `// Auto-generated from ${relativePath}\n`;
     content += `const unsigned char ${varName}[] PROGMEM = {\n`;
@@ -37,6 +47,30 @@ function createFileHeader(filePath, relativePath) {
     fs.writeFileSync(headerFileName, content);
 
     fileEntries.push({ path: relativePath, varName, headerFile: headerFileName });
+
+    async function minify(varName, original) {
+        if (varName.endsWith("html")) {
+            minified = await minifyHTML(original, {
+                collapseWhitespace: true,
+                removeComments: true,
+                minifyCSS: true,
+                minifyJS: true,
+            });
+        } else if (varName.endsWith("css")) {
+            minified = new CleanCSS({}).minify(original).styles;
+        } else if (varName.endsWith("js")) {
+            minified = (await Terser.minify(original)).code;
+        } else {
+            minified = original;
+        }
+
+        const originalSize = Buffer.byteLength(original, 'utf8');
+        const minifiedSize = Buffer.byteLength(minified, 'utf8');
+        const savedPercent = ((originalSize - minifiedSize) / originalSize * 100).toFixed(2);
+        console.log(`minify file: ${varName} saved ${savedPercent}%`);
+
+        return minified;
+    }
 }
 
 // Rekursive Durchsuchung bis maxDepth Ebenen
@@ -58,7 +92,11 @@ function walkDir(dir, baseDir = '', depth = 0, maxDepth = 2) {
 }
 
 // Ordner durchlaufen (max. 2 Ebenen)
-walkDir(inputDir);
+(async () => {
+    console.log('Minify startet...');
+    await walkDir(inputDir);
+    console.log('Fertig!');
+})();
 
 // Haupt-H File erzeugen
 let mainHeaderContent = `// Auto-generated main filesystem header\n\n`;

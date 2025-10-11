@@ -7,5 +7,10 @@
     "run filebuild": "node ./node-scripts/generate-c-dir.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.44.0"
+  }
 }
