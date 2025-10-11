@@ -30,11 +30,13 @@
         <button class="navigate" onclick="changePage('pages/loginpage')">Login</button>
       </div>
     </div>
-    <script>dynamicLoadPage("pages/machineselectpage", 0);</script> <!-- level 0 = no password -->
+
+    <!-- pages with only html -->
     <script>dynamicLoadPage("pages/servicepage", 1);</script> <!-- level 1 = password protected -->
     <script>dynamicLoadPage("pages/loginpage", 255)</script> <!-- level 255 = force to showlogin dialog-->
 
     <!--container to add js and html pages dynamicaly-->
+    <script src="js/machineselectpage.js"></script>
     <script src="js/monitorpage.js"></script>
     <script src="js/diagnosispage.js"></script>
 
