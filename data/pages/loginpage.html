@@ -1,0 +1,35 @@
+<style>
+    #login-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        border-radius: 5px;
+    }
+
+    #login-container h3 {
+        margin-bottom: 10px;
+    }
+
+    #login-container input {
+        width: 200px;
+        padding: 5px;
+    }
+
+    #login-ok-button {
+        margin-right: 10px;
+    }
+</style>
+
+<div id="login-container">
+    <h3 data-i18n="loginpage.enterpassword">Enter Password</h3>
+    <input type="password">
+    <div>
+        <button id="login-ok-button" data-i18n="global.ok">OK</button>
+        <button id="login-cancel-button" data-i18n="global.cancel">Cancel</button>
+    </div>
+</div>

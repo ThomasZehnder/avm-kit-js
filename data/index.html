@@ -29,12 +29,14 @@
     <div page="main">
       <h1>Main Page As Demo</h1>
       <button class="navigate" data-i18n="global.home" onclick="changePage('pages/startpage')">Go Main</button>
-      <button class="navigate" onclick="changePage('pages/servicepage')">Go to Service Page</button>
+      <button class="navigate" onclick="changePage('pages/servicepage')">Service Page</button>
       <button class="navigate" onclick="changePage('pages/monitorpage')">Go to Monitor Page</button>
+      <button class="navigate" onclick="changePage('pages/loginpage')">Login</button>
     </div>
   </div>
   <script>dynamicLoadPage("pages/startpage");</script>
   <script>dynamicLoadPage("pages/servicepage", 1);</script> <!-- level 1 = password protected -->
+  <script>dynamicLoadPage("pages/loginpage")</script>
 
   <!--container to add js and html pages dynamicaly-->
   <script src="js/monitorpage.js"></script>

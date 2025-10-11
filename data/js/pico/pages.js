@@ -64,20 +64,18 @@ class PageManager {
         background: white; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
           <h3 style="margin-bottom: 10px;">Enter Password</h3>
           <input type="password" style="width: 200px; padding: 5px;">
+          <div>
+        <button style="margin-right: 10px;">OK</button>
+        <button data-i18n="global.home">Cancel</button>
+          </div>
         </div>`;
+
       const container = document.createElement('div');
       container.innerHTML = modalHTML;
       const modalDiv = container.querySelector('div');
-      const buttonsDiv = document.createElement('div');
-      buttonsDiv.style.marginTop = '10px';
-      buttonsDiv.style.textAlign = 'right';
-      
-      const okButton = document.createElement('button');
-      okButton.textContent = 'OK';
-      okButton.style.marginRight = '10px';
-      
-      const cancelButton = document.createElement('button');
-      cancelButton.textContent = 'Cancel';
+      const buttonsDiv = modalDiv.querySelector('div');
+      const okButton = buttonsDiv.querySelector('button:first-child');
+      const cancelButton = buttonsDiv.querySelector('button:last-child');
       
       buttonsDiv.appendChild(okButton);
       buttonsDiv.appendChild(cancelButton);
@@ -85,6 +83,7 @@ class PageManager {
       
       const tmpInput = container.querySelector('input');
       document.body.appendChild(container);
+    
       
       tmpInput.focus();
       const password = await new Promise(resolve => {
