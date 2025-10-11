@@ -8,5 +8,7 @@
     "global.cancel": "Abbruch",
     "servicepage.title": "Service Seite",
     "startpage.title": "Start Seite",
-    "loginpage.enterpassword": "Bitte Passwort eingeben"
+    "loginpage.enterpassword": "Bitte Passwort eingeben",
+    "monitorpage.machineselect":"Wähle Maschine:",
+    "monitorpage.frameselect":"Wähle Gestell:"
 }
