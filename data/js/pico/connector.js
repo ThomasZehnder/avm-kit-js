@@ -7,7 +7,7 @@ class Connector {
     }
 
     // Starts polling every 500ms
-    init() {
+    start() {
         
         if (this.timer) return; // Timer already running
         this.timer = setInterval(async () => {
@@ -55,7 +55,7 @@ class Connector {
 
 const connector = new Connector();
 
-connector.init();
+connector.start();
 
 window.connector = connector; // Make globally accessible if needed 
 
