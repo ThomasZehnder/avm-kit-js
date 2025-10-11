@@ -7,7 +7,7 @@
     "global.ok": "Ok",
     "global.cancel": "Cancel",
     "servicepage.title": "Service Page",
-    "startpage.title": "Start Page",
+    "mainpage.title": "Main Page",
     "loginpage.enterpassword": "Please enter password",
     "monitorpage.machineselect":"Select Machine:",
     "monitorpage.frameselect":"Select Frame:"

@@ -1,0 +1,21 @@
+{
+  "machines": [
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars",
+    "Jupiter"
+  ],
+  "frames": [
+    "AutoFrameX",
+    "AutoChassisPro",
+    "AutoStructo",
+    "AutoRackMaster",
+    "AutoBeam",
+    "AutoMountElite",
+    "AutoBasePlus",
+    "AutoSupportX",
+    "AutoTruss",
+    "AutoRig"
+  ]
+}

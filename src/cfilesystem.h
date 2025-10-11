@@ -31,11 +31,12 @@
 #include "fs/pagedemo_html.h"
 #include "fs/pages_diagnosispage_html.h"
 #include "fs/pages_loginpage_html.h"
+#include "fs/pages_machineselectpage_html.h"
 #include "fs/pages_monitorpage_html.h"
 #include "fs/pages_servicepage_html.h"
-#include "fs/pages_startpage_html.h"
 #include "fs/services_currentstate.h"
 #include "fs/services_filedirectory_html.h"
+#include "fs/services_getdatabase.h"
 #include "fs/services_getpassword.h"
 #include "fs/services_messagelog_html.h"
 #include "fs/test_includes_html.h"
@@ -78,11 +79,12 @@ const CFileEntry cFileSystem[] = {
     {"pagedemo.html", pagedemo_html, pagedemo_html_len},
     {"pages/diagnosispage.html", pages_diagnosispage_html, pages_diagnosispage_html_len},
     {"pages/loginpage.html", pages_loginpage_html, pages_loginpage_html_len},
+    {"pages/machineselectpage.html", pages_machineselectpage_html, pages_machineselectpage_html_len},
     {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
     {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
-    {"pages/startpage.html", pages_startpage_html, pages_startpage_html_len},
     {"services/currentstate", services_currentstate, services_currentstate_len},
     {"services/filedirectory.html", services_filedirectory_html, services_filedirectory_html_len},
+    {"services/getdatabase", services_getdatabase, services_getdatabase_len},
     {"services/getpassword", services_getpassword, services_getpassword_len},
     {"services/messagelog.html", services_messagelog_html, services_messagelog_html_len},
     {"test-includes.html", test_includes_html, test_includes_html_len},
