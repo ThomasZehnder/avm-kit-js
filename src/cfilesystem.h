@@ -19,6 +19,7 @@
 #include "fs/images_globe_icon_svg.h"
 #include "fs/images_home_icon_png.h"
 #include "fs/images_logout_icon_svg.h"
+#include "fs/images_targetview_svg.h"
 #include "fs/index_html.h"
 #include "fs/js_dbmanager_js.h"
 #include "fs/js_diagnosispage_js.h"
@@ -70,6 +71,7 @@ const CFileEntry cFileSystem[] = {
     {"images/globe_icon.svg", images_globe_icon_svg, images_globe_icon_svg_len},
     {"images/home_icon.png", images_home_icon_png, images_home_icon_png_len},
     {"images/logout_icon.svg", images_logout_icon_svg, images_logout_icon_svg_len},
+    {"images/targetview.svg", images_targetview_svg, images_targetview_svg_len},
     {"index.html", index_html, index_html_len},
     {"js/dbmanager.js", js_dbmanager_js, js_dbmanager_js_len},
     {"js/diagnosispage.js", js_diagnosispage_js, js_diagnosispage_js_len},
