@@ -10,5 +10,7 @@
     "mainpage.title": "Main Page",
     "loginpage.enterpassword": "Please enter password",
     "monitorpage.machineselect":"Select Machine:",
-    "monitorpage.frameselect":"Select Frame:"
+    "monitorpage.frameselect":"Select Frame:",
+    "monitorpage.actualposition":"Actual Position",
+    "monitorpage.targetposition":"Target Position"
 }

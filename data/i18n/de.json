@@ -10,5 +10,7 @@
     "mainpage.title": "Start Seite",
     "loginpage.enterpassword": "Bitte Passwort eingeben",
     "monitorpage.machineselect":"Wähle Maschine:",
-    "monitorpage.frameselect":"Wähle Gestell:"
+    "monitorpage.frameselect":"Wähle Gestell:",
+    "monitorpage.actualposition":"Aktuelle Position",
+    "monitorpage.targetposition":"Ziel Position"
 }
