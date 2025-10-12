@@ -36,7 +36,7 @@
 #include "fs/pages_machineselectpage_html.h"
 #include "fs/pages_monitorpage_html.h"
 #include "fs/pages_servicepage_html.h"
-#include "fs/services_currentstate.h"
+#include "fs/services_currentstate_json.h"
 #include "fs/services_filedirectory_html.h"
 #include "fs/services_getdatabase.h"
 #include "fs/services_getpassword.h"
@@ -87,7 +87,7 @@ const CFileEntry cFileSystem[] = {
     {"pages/machineselectpage.html", pages_machineselectpage_html, pages_machineselectpage_html_len},
     {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
     {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
-    {"services/currentstate", services_currentstate, services_currentstate_len},
+    {"services/currentstate.json", services_currentstate_json, services_currentstate_json_len},
     {"services/filedirectory.html", services_filedirectory_html, services_filedirectory_html_len},
     {"services/getdatabase", services_getdatabase, services_getdatabase_len},
     {"services/getpassword", services_getpassword, services_getpassword_len},

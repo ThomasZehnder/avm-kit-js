@@ -9,11 +9,20 @@ class Connector {
 
     // Starts polling every 500ms
     start() {
-        
+
         if (this.timer) return; // Timer already running
+
         this.timer = setInterval(async () => {
+
+            // Create an AbortController
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 1000); // 1000 ms = 1 second
+
             try {
-                const response = await fetch('services/currentstate');
+                const response = await fetch('services/currentstate.json', {
+                    signal: controller.signal
+                });
+                clearTimeout(timeout); // clear the timeout if fetch succeeds
                 if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
                 const data = await response.json();
                 //console.log('Fetched JSON data:', data);
@@ -55,7 +64,7 @@ class Connector {
         });
     }
     //change color
-    _chageStatusColor(color){
+    _chageStatusColor(color) {
         document.getElementById("connector-top-line").style.backgroundColor = color;
     }
 }

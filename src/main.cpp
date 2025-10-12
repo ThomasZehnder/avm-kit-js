@@ -109,8 +109,10 @@ void handleCurrentState() {
   json += "\"ip\":\"" + WiFi.localIP().toString() + "\",";
   json += "\"rssi\":" + String(WiFi.RSSI()) + ",";
   json += "\"mac\":\"" + WiFi.macAddress() + "\",";
-  json += "\"x\":" + String(2.0+millis()%100/100.0) + ",";
-  json += "\"y\":" + String(-1.0+millis()%100/100.0) + "";
+  json += "\"actX\":" + String(2.0+millis()%100/100.0) + ",";
+  json += "\"actY\":" + String(-2.0+millis()%100/100.0) + ",";
+ json += "\"targetX\":" + String(3.0+millis()%100/100.0) + ",";
+  json += "\"targetY\":" + String(-3.0+millis()%100/100.0) + "";
   json += "}";
 
   server.send(200, "application/json", json);
@@ -163,7 +165,7 @@ void setup() {
   server.on("/", handleRoot);
   server.on("/services/messagelog.html", handleMessageLog);  // Add new route
   server.on("/services/filedirectory.html", handleFileDirectory);  // Add new route
-  server.on("/services/currentstate", handleCurrentState);  // Add new route
+  server.on("/services/currentstate.json", handleCurrentState);  // Add new route
   server.on("/services/getpassword", handleGetPassword);  // Add new route
   server.onNotFound(handleFile);
 
