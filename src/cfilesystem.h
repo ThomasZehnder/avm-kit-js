@@ -42,6 +42,7 @@
 #include "fs/services_getpassword.h"
 #include "fs/services_messagelog_html.h"
 #include "fs/test_includes_html.h"
+#include "fs/toplineanimation_html.h"
 
 typedef struct {
     const char* name;
@@ -92,6 +93,7 @@ const CFileEntry cFileSystem[] = {
     {"services/getpassword", services_getpassword, services_getpassword_len},
     {"services/messagelog.html", services_messagelog_html, services_messagelog_html_len},
     {"test-includes.html", test_includes_html, test_includes_html_len},
+    {"toplineanimation.html", toplineanimation_html, toplineanimation_html_len},
 };
 
 const int cFileSystemCount = sizeof(cFileSystem)/sizeof(cFileSystem[0]);
