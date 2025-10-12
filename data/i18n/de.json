@@ -9,8 +9,8 @@
     "servicepage.title": "Service Seite",
     "mainpage.title": "Start Seite",
     "loginpage.enterpassword": "Bitte Passwort eingeben",
-    "monitorpage.machineselect":"Wähle Maschine:",
-    "monitorpage.frameselect":"Wähle Gestell:",
+    "maschineselectpage.machineselect":"Wähle Maschine:",
+    "maschineselectpage.frameselect":"Wähle Gestell:",
     "monitorpage.actualposition":"Aktuelle Position",
     "monitorpage.targetposition":"Ziel Position"
 }

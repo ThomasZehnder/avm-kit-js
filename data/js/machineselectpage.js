@@ -26,7 +26,7 @@ class MachineSelectPage  {
         const select = document.getElementById('machine-select');
 
         // Remove existing options except the first placeholder
-        select.innerHTML = '<option disabled data-i18n="monitorpage.machineselect" value="">Select Machine</option>';
+        select.innerHTML = '<option disabled data-i18n="maschineselectpage.machineselect" value="">Select Machine</option>';
 
         // Add machines dynamically
         machineArray.forEach((machine, index) => {
@@ -45,7 +45,7 @@ class MachineSelectPage  {
         const select = document.getElementById('frame-select');
 
         // Remove existing options except the first placeholder
-        select.innerHTML = '<option disabled data-i18n="monitorpage.frameselect" value="">Select Frame</option>';
+        select.innerHTML = '<option disabled data-i18n="maschineselectpage.frameselect" value="">Select Frame</option>';
 
         // Add machines dynamically
         frameArray.forEach((frame, index) => {
