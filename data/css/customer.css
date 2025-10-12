@@ -128,7 +128,22 @@ footer {
 }
 
 .element_grid{
+        display: flex;         /* makes child divs align horizontally */
+    align-items: center;   /* vertically centers them if they have different heights */
+    gap: 5px;              /* optional: adds space between the divs */
     margin:5px
+}
+
+.numeric_out{
+    background-color: #1d819b;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    min-width: 100px;
+    font-family: 'open sans', sans-serif;
+    font-size: 20px;
+    border: none;
 }
 
 

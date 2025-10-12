@@ -1,8 +1,38 @@
 <h1>Monitor Page</h1>
 
 <div id="monitorpage-spinner"> spinner</div>
-<br/>
-Current State: <br/>    
+<br />
+
+<div class="grid_3_2">
+    <div class="element_grid">
+        1
+    </div>
+    <div class="element_grid" >
+        Aktuelle Position
+    </div>
+    <div class="element_grid">Zielposition</div>
+    <div class="element_grid">4</div>
+    <div class="element_grid">
+        <div>X: </div>
+        <div id="actX-value" class="numeric_out">+1</div>
+    </div>
+    <div class="element_grid">
+        <div>X: </div>
+        <div id="setX-value" class="numeric_out">+2</div>
+    </div>
+    <div class="element_grid">7</div>
+    <div class="element_grid">
+        <div>Y: </div>
+        <div id="actY-value" class="numeric_out">+3</div>
+    </div>
+    <div class="element_grid">
+        <div>Y: </div>
+        <div id="setY-value" class="numeric_out">+4</div>
+    </div>
+</div>
+
+Current State: <br />
+
 <div id="currentstate"> no data</div>
 <button onclick="connector.start();">Start Communication</button>
 <button onclick="connector.stop();">Stop Communication</button>
