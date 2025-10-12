@@ -4,6 +4,7 @@ class Connector {
     constructor() {
         this.listeners = []; // Array to store registered listeners
         this.timer = null;   // Reference to the polling timer
+        this.div = null;
     }
 
     // Starts polling every 500ms
@@ -17,8 +18,10 @@ class Connector {
                 const data = await response.json();
                 //console.log('Fetched JSON data:', data);
                 this._notifyListeners(data); // Notify all registered listeners
+                this._chageStatusColor("green");
             } catch (error) {
                 console.error('Error during polling:', error);
+                this._chageStatusColor("red");
             }
         }, 500); // Poll every 500ms
     }
@@ -29,6 +32,7 @@ class Connector {
             clearInterval(this.timer);
             this.timer = null;
         }
+        this._chageStatusColor("darkgray");
     }
 
     // Registers a listener callback
@@ -49,6 +53,10 @@ class Connector {
                 console.error('Error in listener:', error);
             }
         });
+    }
+    //change color
+    _chageStatusColor(color){
+        document.getElementById("connector-top-line").style.backgroundColor = color;
     }
 }
 

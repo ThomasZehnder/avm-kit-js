@@ -131,3 +131,26 @@ footer {
     margin:5px
 }
 
+
+#connector-top-line {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  background-color: darkgreen;
+  transform: translateX(-50%);
+  animation: expand-line 10s ease-in-out infinite alternate;
+}
+
+/* Keyframes for expanding and shrinking from the center */
+@keyframes expand-line {
+  0% {
+    width: 33%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
