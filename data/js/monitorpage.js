@@ -43,10 +43,11 @@ const monitorPage = {
 
     callbackData: function (data) {
         this.updateJsonView(data);
-        this.updateDivRealValue(data.actX, "actX-value")
-        this.updateDivRealValue(data.actY, "actY-value")
-        this.updateDivRealValue(data.targetX, "targetX-value")
-        this.updateDivRealValue(data.targetY, "targetY-value")
+        this.updateDivRealValue(data.actX, "actX-value");
+        this.updateDivRealValue(data.actY, "actY-value");
+        this.updateDivRealValue(data.targetX, "targetX-value");
+        this.updateDivRealValue(data.targetY, "targetY-value");
+        this.updateTargetView(data);
     },
 
     updateJsonView: function (data) {
@@ -76,6 +77,30 @@ const monitorPage = {
         } catch (error) {
             console.error('Error updateDivRealValue():', error);
         }
+    },
+
+    updateTargetView(data) {
+        const svgDoc = document.getElementById('target-view').contentDocument;
+        if (svgDoc) {
+            const targetElement = svgDoc.getElementById("target-position");
+            const actualElement = svgDoc.getElementById("actual-position");
+
+            const zoomFactor = 10.0;
+
+            if (svgDoc && targetElement && actualElement) {
+
+
+                targetElement.setAttribute('transform', `translate(${data.targetX*zoomFactor},${data.targetY*zoomFactor})`);
+                actualElement.setAttribute('transform', `translate(${data.actX*zoomFactor},${data.actY*zoomFactor})`);
+
+            } else {
+                console.error("transorm SVG View objcts not found", svgDoc, targetElement, actualElement);
+            }
+        } else {
+            console.log("wait to get svg object...");
+        }
+
+
     }
 
 };
