@@ -1,7 +1,7 @@
 console.log("load monitorpage.js");
 
 // Define namespace
-const MonitorPage = {
+const monitorPage = {
     init: function () {
         console.log("MonitorPage initialized");
         this.pages = {};
@@ -40,8 +40,17 @@ const MonitorPage = {
             , 1000);
         console.log("Starting timer");
     },
+
     callbackData: function (data) {
-        const elementId = "currentstate";
+        this.updateJsonView(data);
+        this.updateDivRealValue(data.actX, "actX-value")
+        this.updateDivRealValue(data.actY, "actY-value")
+        this.updateDivRealValue(data.targetX, "targetX-value")
+        this.updateDivRealValue(data.targetY, "targetY-value")
+    },
+
+    updateJsonView: function (data) {
+        const elementId = "connectio-data-monitor";
         try {
             data = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         } catch (e) {
@@ -50,13 +59,31 @@ const MonitorPage = {
             return;
         }
         document.getElementById(elementId).innerHTML = data;
+    },
+
+    updateDivRealValue: function (value, divName) {
+        try {
+            //console.log(value, typeof(value));
+            if (typeof (value) != "numeric") {
+                value = parseFloat(value);
+            }
+            // Format with 2 decimal digits and a leading + or -
+            const formattedValue = (value >= 0 ? '+' : '') + value.toFixed(2);
+
+            // Update the div
+            document.getElementById(divName).textContent = formattedValue;
+
+        } catch (error) {
+            console.error('Error updateDivRealValue():', error);
+        }
     }
+
 };
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    MonitorPage.init();
-    connector.addEventListener(MonitorPage.callbackData);
+    monitorPage.init();
+    connector.addEventListener(monitorPage.callbackData.bind(monitorPage));
 });
 
 

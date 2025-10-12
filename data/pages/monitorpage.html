@@ -16,7 +16,7 @@
     </div>
     <div class="element_grid">
         <div>X: </div>
-        <div id="setX-value" class="numeric_out">+2</div>
+        <div id="targetX-value" class="numeric_out">+2</div>
     </div>
     <div class="element_grid">7</div>
     <div class="element_grid">
@@ -25,13 +25,13 @@
     </div>
     <div class="element_grid">
         <div>Y: </div>
-        <div id="setY-value" class="numeric_out">+4</div>
+        <div id="targetY-value" class="numeric_out">+4</div>
     </div>
 </div>
 
-Current State: <br />
+Current State (only during developmet): <br />
+<div id="connectio-data-monitor"> no data</div>
 
-<div id="currentstate"> no data</div>
 <button onclick="connector.start();">Start Communication</button>
 <button onclick="connector.stop();">Stop Communication</button>
 <button class="navigate" data-i18n="global.home" onclick="changePage('main')">Go Main</button>
