@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+<h3>Websocket Demo</h3>
+
+
+<script>
+let ws = new WebSocket("ws://" + location.hostname + ":81/");
+ws.onopen = () => console.log("WebSocket connected");
+ws.onmessage = (event) => console.log("Message:", event.data);
+ws.onclose = () => console.log("WebSocket closed");
+
+// Send command example:
+function toggleLED() {
+  ws.send("toggleLED");
+}
+</script>
+
+
+<button onclick="toggleLED()">Toggle LED</button>
+
+
+
+</body>
+</html>

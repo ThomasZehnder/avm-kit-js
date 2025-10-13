@@ -36,6 +36,10 @@ load test-includes.html
 "/services/currentstate"
 {"counter":"14","ssid":"zhs_22_wil","ip":"192.168.1.197","rssi":-55,"mac":"50:02:91:DC:BF:79","x":2.52,"y":-0.48}
 
+## websocket
+
+use the WebSocketsServer library (part of the ESP8266 core) to add real-time, bidirectional communication — perfect for streaming your avmSerial logs or sensor data live to a webpage.
+
 ## Todo
 
 * next websocket demo (first fake with polling get-request)

@@ -1,7 +1,9 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include <WebSocketsServer.h>
 #include "cfilesystem.h" // Dein generiertes FS aus Node-Skript
 #include "avmSerial.h"
+#include "websocket_service.hpp"
 #include ".credentials.h"
 
 const char *ssid = __SSID;
@@ -205,11 +207,26 @@ void setup()
   server.begin();
   mySerial.println("HTTP server started.");
 
+  // Websocket starten
+  setupWebSocket();
+
   // Builtin LED als Ausgang
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
+unsigned long nextTimeToCall = 0;
+int wsCounter = 0;
+
 void loop()
 {
   server.handleClient();
+  loopWebSocket(); // Handle WebSocket events
+
+  if (int(millis() - nextTimeToCall) > 0)
+  {
+   wsCounter++;
+    String msg = String(wsCounter);
+    sendWebSocketLog(msg);
+    nextTimeToCall = millis() + 500;
+  }
 }
