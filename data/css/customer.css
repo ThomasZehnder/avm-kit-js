@@ -149,9 +149,9 @@ footer {
 
 #connector-top-line {
   position: fixed;
-  top: 0;
+  top: 3px;
   left: 50%;
-  height: 2px;
+  height: 4px;
   width: 0;
   background-color: darkgreen;
   transform: translateX(-50%);
