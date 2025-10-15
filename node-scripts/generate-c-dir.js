@@ -2,10 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 
-const inputDir = 'data';          // Quelle
+const inputDir = 'merge-data';          // Quelle
 const outputSrcDir = 'src';       // Hauptordner für generierte H-Files
 const outputFsDir = path.join(outputSrcDir, 'fs'); // Unterordner für Einzel-H-Files
 const mainHeaderFile = path.join(outputSrcDir, 'cfilesystem.h'); // Haupt-H File
+
+
+// Remove existing merge-data folder if it exists
+if (fs.existsSync(outputFsDir)) {
+    fs.rmSync(outputFsDir, { recursive: true, force: true });
+    console.log(`Deleted existing folder: ${outputFsDir}`);
+}
 
 // Ordner ./src und ./src/fs erstellen, falls nicht existiert
 if (!fs.existsSync(outputSrcDir)) fs.mkdirSync(outputSrcDir);

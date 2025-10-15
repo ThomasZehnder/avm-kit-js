@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "run mergebuild": "node ./node-scripts/merge-js-img.js",
     "run filebuild": "node ./node-scripts/generate-c-dir.js"
   },
   "author": "",
