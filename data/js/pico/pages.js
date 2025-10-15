@@ -6,6 +6,9 @@ class PageManager {
     this.password = "admin"; // default password, change as needed
     this.logOutDiv = null;
 
+    this.loadPageQueue = [];
+    this.isProcessing = false;
+
     // Init after DOM loaded
     window.addEventListener("DOMContentLoaded", () => {
       this.refreshPageList();
@@ -18,8 +21,11 @@ class PageManager {
     window.dynamicLoadPage = this.dynamicLoadPage.bind(this);
     window.logOut = this.logOut.bind(this);
 
-    // Fetch password from server
-    this.fetchPassword();
+    // Fetch password from server after 2s
+    setTimeout(() => this.fetchPassword(), 2000);
+
+    // Check the queue every 300ms and process one page if available
+    setInterval(() => this.processLoadPage(), 300);
   }
 
   refreshPageList() {
@@ -54,7 +60,7 @@ class PageManager {
 
         //force to hide login page
         this.pages["pages/loginpage"].div.classList.remove("active");
-        
+
         if (password !== this.password) { // Check password
           alert("Incorrect password!");
           this.changePage("main"); // go back to main page
@@ -92,7 +98,20 @@ class PageManager {
     }
   }
 
-  async dynamicLoadPage(pageName, accessLevel = 0) {
+  dynamicLoadPage(pageName, accessLevel = 0, callback=null) {
+    console.warn("Move page load to queue: ", pageName);
+    this.loadPageQueue.push({ pageName, accessLevel, callback });
+  }
+
+
+  async processLoadPage() {
+    // If already processing or queue is empty, do nothing
+    if (this.isProcessing || this.loadPageQueue.length === 0) return;
+
+    const { pageName, accessLevel , callback} = this.loadPageQueue.shift(); // Get next page
+    this.isProcessing = true;
+    console.warn("Load page from queue: ", pageName);
+
     try {
       const response = await fetch(`${pageName}.html`);
       if (!response.ok) throw new Error(`Failed to load: ${response.statusText}`);
@@ -115,6 +134,13 @@ class PageManager {
       errorDiv.style.color = "red";
       errorDiv.textContent = `Page '${pageName}' could not be loaded.`;
       document.getElementById("pagesContainer").appendChild(errorDiv);
+    } finally {
+      this.isProcessing = false; // Ready to process next page
+
+      if (callback){
+        console.warn("callback after page load", callback);
+        callback();
+      }
     }
   }
 

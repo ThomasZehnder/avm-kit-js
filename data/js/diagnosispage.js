@@ -56,14 +56,10 @@ const DiagnosisPage = {
 };
 
 
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    DiagnosisPage.refresh()
-
-});
-
 // Export namespace to window object if needed
 window.DiagnosisPage = DiagnosisPage;
 
-dynamicLoadPage("pages/diagnosispage",1); // Access level 1
+dynamicLoadPage("pages/diagnosispage",1, () => {
+    DiagnosisPage.refresh();
+
+}); // Access level 1

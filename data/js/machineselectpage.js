@@ -1,4 +1,4 @@
-console.warn("load machineselectpage.js");
+console.log("load machineselectpage.js");
 
 // Define namespace
 class MachineSelectPage  {
@@ -9,6 +9,8 @@ class MachineSelectPage  {
         console.log("Machineselect initialized");
 
         dbManager.addEventListener(this.updatePage.bind(this));
+
+        dbManager.init();
 
     }
 
@@ -64,11 +66,8 @@ class MachineSelectPage  {
 
 const machineSelectPage = new MachineSelectPage();
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+//callback, when html was laoded
+dynamicLoadPage("pages/machineselectpage", 0, () => {
     machineSelectPage.init()
-
 });
-
-dynamicLoadPage("pages/machineselectpage", 0);
-console.warn("....");
+console.log("end machine selectpage ....");

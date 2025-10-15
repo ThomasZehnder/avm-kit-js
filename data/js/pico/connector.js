@@ -72,7 +72,7 @@ class Connector {
 
 const connector = new Connector();
 
-connector.start();
+//setTimeout(() => connector.start(), 5000);
 
 window.connector = connector; // Make globally accessible if needed 
 

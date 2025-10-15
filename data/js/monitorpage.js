@@ -105,12 +105,8 @@ const monitorPage = {
 
 };
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Load the page content dynamically
+dynamicLoadPage("pages/monitorpage",0,() => {
     monitorPage.init();
     connector.addEventListener(monitorPage.callbackData.bind(monitorPage));
 });
-
-
-// Load the page content dynamically
-dynamicLoadPage("pages/monitorpage");

@@ -54,12 +54,7 @@ class DbManager {
   }
 }
 
-// Example usage
 const dbManager = new DbManager();
-dbManager.init().then(() => {
-  console.log(dbManager.getMachines());
-  console.log(dbManager.getFrames());
-});
 
 
 window.dbManager = dbManager; // Make globally accessible if needed 
