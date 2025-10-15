@@ -5,7 +5,7 @@ const ROOT_DIR = path.join(process.cwd(), 'data');
 const OUTPUT_DIR = path.join(process.cwd(), 'merge-data');
 const I18N_FOLDER = path.join(ROOT_DIR, 'i18n');
 const SERVICES_FOLDER = path.join(ROOT_DIR, 'services');
-const IMAGES_FOLDER = path.join(ROOT_DIR, 'images');
+const IMAGES_FOLDER = path.join(ROOT_DIR, 'images/flags');
 
 // Remove existing merge-data folder if it exists
 if (fs.existsSync(OUTPUT_DIR)) {
@@ -156,11 +156,16 @@ function processAll() {
     }
     // Copy images folder (exclude from Arduino, laguage selector should use emdebbed images)
     if (fs.existsSync(IMAGES_FOLDER)) {
-        copyFolder(IMAGES_FOLDER, path.join(OUTPUT_DIR, 'images'));
-        console.log(`Copied ${IMAGES_FOLDER} folder to merge-data/images`);
+        copyFolder(IMAGES_FOLDER, path.join(OUTPUT_DIR, 'images','flags'));
+        console.log(`Copied ${IMAGES_FOLDER} folder to merge-data/images/flags`);
     }
 
     console.log(`Done! Modified HTML, images, JS, CSS, and i18n saved in "${OUTPUT_DIR}".`);
 }
 
+// Only run process() if this file is executed directly
+if (require.main === module) {
 processAll();
+}
+
+module.exports = { processAll };

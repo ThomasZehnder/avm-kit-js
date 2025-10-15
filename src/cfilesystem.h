@@ -3,18 +3,12 @@
 #include "fs/i18n_de_json.h"
 #include "fs/i18n_en_json.h"
 #include "fs/i18n_kr_json.h"
-#include "fs/images_diagnosis_icon_png.h"
-#include "fs/images_favicon_png.h"
 #include "fs/images_flags_de_svg.h"
 #include "fs/images_flags_en_svg.h"
 #include "fs/images_flags_es_svg.h"
 #include "fs/images_flags_fr_svg.h"
 #include "fs/images_flags_it_svg.h"
 #include "fs/images_flags_kr_svg.h"
-#include "fs/images_globe_icon_svg.h"
-#include "fs/images_home_icon_png.h"
-#include "fs/images_logout_icon_svg.h"
-#include "fs/images_targetview_svg.h"
 #include "fs/index_html.h"
 #include "fs/lamp_html.h"
 #include "fs/languagedemo_html.h"
@@ -43,18 +37,12 @@ const CFileEntry cFileSystem[] = {
     {"i18n/de.json", i18n_de_json, i18n_de_json_len},
     {"i18n/en.json", i18n_en_json, i18n_en_json_len},
     {"i18n/kr.json", i18n_kr_json, i18n_kr_json_len},
-    {"images/diagnosis_icon.png", images_diagnosis_icon_png, images_diagnosis_icon_png_len},
-    {"images/favicon.png", images_favicon_png, images_favicon_png_len},
     {"images/flags/de.svg", images_flags_de_svg, images_flags_de_svg_len},
     {"images/flags/en.svg", images_flags_en_svg, images_flags_en_svg_len},
     {"images/flags/es.svg", images_flags_es_svg, images_flags_es_svg_len},
     {"images/flags/fr.svg", images_flags_fr_svg, images_flags_fr_svg_len},
     {"images/flags/it.svg", images_flags_it_svg, images_flags_it_svg_len},
     {"images/flags/kr.svg", images_flags_kr_svg, images_flags_kr_svg_len},
-    {"images/globe_icon.svg", images_globe_icon_svg, images_globe_icon_svg_len},
-    {"images/home_icon.png", images_home_icon_png, images_home_icon_png_len},
-    {"images/logout_icon.svg", images_logout_icon_svg, images_logout_icon_svg_len},
-    {"images/targetview.svg", images_targetview_svg, images_targetview_svg_len},
     {"index.html", index_html, index_html_len},
     {"lamp.html", lamp_html, lamp_html_len},
     {"languagedemo.html", languagedemo_html, languagedemo_html_len},

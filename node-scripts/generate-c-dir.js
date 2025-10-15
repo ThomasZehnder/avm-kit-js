@@ -1,11 +1,18 @@
 const fs = require('fs');
 const path = require('path');
+const processAll = require('./merge-js-img.js')
 
-
-const inputDir = 'merge-data';          // Quelle
+// Get the first argument after "node ./node-scripts/generate-c-dir.js"
+const inputDir = process.argv[2] || "data";
 const outputSrcDir = 'src';       // Hauptordner für generierte H-Files
 const outputFsDir = path.join(outputSrcDir, 'fs'); // Unterordner für Einzel-H-Files
 const mainHeaderFile = path.join(outputSrcDir, 'cfilesystem.h'); // Haupt-H File
+
+if (inputDir.startsWith("merge")) {
+    console.log("Start merge js, css and images into HTML files...");
+    processAll.processAll();
+    console.log("finished to preprocess HTML files...");
+}
 
 
 // Remove existing merge-data folder if it exists
@@ -61,6 +68,7 @@ function walkDir(dir, baseDir = '', depth = 0, maxDepth = 2) {
         if (stat.isDirectory()) {
             walkDir(fullPath, relPath, depth + 1, maxDepth);
         } else if (stat.isFile()) {
+            console.log("Create h-file: ", fullPath);
             createFileHeader(fullPath, relPath);
         }
     });
@@ -68,9 +76,9 @@ function walkDir(dir, baseDir = '', depth = 0, maxDepth = 2) {
 
 // Ordner durchlaufen (max. 2 Ebenen)
 (async () => {
-    console.log('Minify startet...');
+    console.log('Generate h-Files started...');
     await walkDir(inputDir);
-    console.log('Fertig!');
+    console.log('Finished!');
 })();
 
 // Haupt-H File erzeugen

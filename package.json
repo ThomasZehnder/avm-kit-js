@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "run mergebuild": "node ./node-scripts/merge-js-img.js",
-    "run filebuild": "node ./node-scripts/generate-c-dir.js"
-  },
+    "run filebuild original": "node ./node-scripts/generate-c-dir.js data",
+    "run filebuild merged": "node ./node-scripts/generate-c-dir.js merge-data"  },
   "author": "",
   "license": "ISC"
 }
