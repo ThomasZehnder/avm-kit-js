@@ -18,12 +18,15 @@
 #include "fs/pages_loginpage_html.h"
 #include "fs/pages_machineselectpage_html.h"
 #include "fs/pages_monitorpage_html.h"
+#include "fs/pages_passwordpage_html.h"
 #include "fs/pages_servicepage_html.h"
 #include "fs/services_currentstate_json.h"
 #include "fs/services_filedirectory_html.h"
 #include "fs/services_getdatabase.h"
 #include "fs/services_getpassword.h"
 #include "fs/services_messagelog_html.h"
+#include "fs/services_resetpassword.h"
+#include "fs/services_setpassword.h"
 #include "fs/test_includes_html.h"
 #include "fs/toplineanimation_html.h"
 #include "fs/websocketdemo_html.h"
@@ -53,12 +56,15 @@ const CFileEntry cFileSystem[] = {
     {"pages/loginpage.html", pages_loginpage_html, pages_loginpage_html_len},
     {"pages/machineselectpage.html", pages_machineselectpage_html, pages_machineselectpage_html_len},
     {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
+    {"pages/passwordpage.html", pages_passwordpage_html, pages_passwordpage_html_len},
     {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
     {"services/currentstate.json", services_currentstate_json, services_currentstate_json_len},
     {"services/filedirectory.html", services_filedirectory_html, services_filedirectory_html_len},
     {"services/getdatabase", services_getdatabase, services_getdatabase_len},
     {"services/getpassword", services_getpassword, services_getpassword_len},
     {"services/messagelog.html", services_messagelog_html, services_messagelog_html_len},
+    {"services/resetpassword", services_resetpassword, services_resetpassword_len},
+    {"services/setpassword", services_setpassword, services_setpassword_len},
     {"test-includes.html", test_includes_html, test_includes_html_len},
     {"toplineanimation.html", toplineanimation_html, toplineanimation_html_len},
     {"websocketdemo.html", websocketdemo_html, websocketdemo_html_len},

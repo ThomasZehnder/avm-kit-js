@@ -37,6 +37,7 @@ h2 {
 
 button{
     background-color: #1d819b;
+    margin-bottom: 10px;
 }
 
 button.navigate {
