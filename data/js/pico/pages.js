@@ -3,7 +3,7 @@ class PageManager {
     this.pages = {};
     this.currentPage = null;
     this.accessLevel = 0; // default access level 0 = no password
-    this.password = "admin"; // default password, change as needed
+    this.password = null; // load password first time opening the login dialog
     this.logOutDiv = null;
 
     this.loadPageQueue = [];
@@ -22,7 +22,7 @@ class PageManager {
     window.logOut = this.logOut.bind(this);
 
     // Fetch password from server after 2s
-    setTimeout(() => this.fetchPassword(), 2000);
+    //setTimeout(() => this._fetchPassword(), 2000);
 
     // Check the queue every 300ms and process one page if available
     setInterval(() => this.processLoadPage(), 300);
@@ -52,6 +52,11 @@ class PageManager {
 
     if (this.pages[name]) {
       if ((this.pages[name].accessLevel > this.accessLevel) || (this.pages[name].accessLevel === 255)) {
+
+        if (!this.password) {
+          //get actual password
+          await this._fetchPassword();
+        }
 
         //force to show login page
         this.pages["pages/loginpage"].div.classList.add("active");
@@ -98,7 +103,7 @@ class PageManager {
     }
   }
 
-  dynamicLoadPage(pageName, accessLevel = 0, callback=null) {
+  dynamicLoadPage(pageName, accessLevel = 0, callback = null) {
     console.warn("Move page load to queue: ", pageName);
     this.loadPageQueue.push({ pageName, accessLevel, callback });
   }
@@ -108,7 +113,7 @@ class PageManager {
     // If already processing or queue is empty, do nothing
     if (this.isProcessing || this.loadPageQueue.length === 0) return;
 
-    const { pageName, accessLevel , callback} = this.loadPageQueue.shift(); // Get next page
+    const { pageName, accessLevel, callback } = this.loadPageQueue.shift(); // Get next page
     this.isProcessing = true;
     console.warn("Load page from queue: ", pageName);
 
@@ -137,14 +142,14 @@ class PageManager {
     } finally {
       this.isProcessing = false; // Ready to process next page
 
-      if (callback){
+      if (callback) {
         console.warn("callback after page load", callback);
         callback();
       }
     }
   }
 
-  async fetchPassword() {
+  async _fetchPassword() {
     try {
       const response = await fetch("services/getpassword");
       if (!response.ok) throw new Error(`Failed to fetch password: ${response.statusText}`);
