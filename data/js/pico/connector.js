@@ -11,28 +11,7 @@ class Connector {
     start() {
 
         if (this.timer) return; // Timer already running
-
-        this.timer = setInterval(async () => {
-
-            // Create an AbortController
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 1000); // 1000 ms = 1 second
-
-            try {
-                const response = await fetch('services/currentstate.json', {
-                    signal: controller.signal
-                });
-                clearTimeout(timeout); // clear the timeout if fetch succeeds
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                const data = await response.json();
-                //console.log('Fetched JSON data:', data);
-                this._notifyListeners(data); // Notify all registered listeners
-                this._chageStatusColor("green");
-            } catch (error) {
-                console.error('Error during polling:', error);
-                this._chageStatusColor("red");
-            }
-        }, 500); // Poll every 500ms
+        this._fetchData();
     }
 
     // Stops the polling timer
@@ -42,6 +21,31 @@ class Connector {
             this.timer = null;
         }
         this._chageStatusColor("darkgray");
+    }
+
+    async _fetchData() {
+
+        // Create an AbortController
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 1000); // 1000 ms = 1 second
+
+        try {
+            const response = await fetch('services/currentstate.json', {
+                signal: controller.signal
+            });
+            clearTimeout(timeout); // clear the timeout if fetch succeeds
+            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+            const data = await response.json();
+            //console.log('Fetched JSON data:', data);
+            this._notifyListeners(data); // Notify all registered listeners
+            this._chageStatusColor("green");
+        } catch (error) {
+            console.error('Error during polling:', error);
+            this._chageStatusColor("red");
+        } finally {
+            this.timer = setTimeout(async () => this._fetchData(), 100); // call after Timeout
+        }
+
     }
 
     // Registers a listener callback

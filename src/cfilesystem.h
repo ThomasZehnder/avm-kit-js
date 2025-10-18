@@ -3,6 +3,7 @@
 #include "fs/i18n_de_json.h"
 #include "fs/i18n_en_json.h"
 #include "fs/i18n_kr_json.h"
+#include "fs/images_dynamics_targetview_svg.h"
 #include "fs/images_flags_de_svg.h"
 #include "fs/images_flags_en_svg.h"
 #include "fs/images_flags_es_svg.h"
@@ -37,6 +38,7 @@ const CFileEntry cFileSystem[] = {
     {"i18n/de.json", i18n_de_json, i18n_de_json_len},
     {"i18n/en.json", i18n_en_json, i18n_en_json_len},
     {"i18n/kr.json", i18n_kr_json, i18n_kr_json_len},
+    {"images/dynamics/targetview.svg", images_dynamics_targetview_svg, images_dynamics_targetview_svg_len},
     {"images/flags/de.svg", images_flags_de_svg, images_flags_de_svg_len},
     {"images/flags/en.svg", images_flags_en_svg, images_flags_en_svg_len},
     {"images/flags/es.svg", images_flags_es_svg, images_flags_es_svg_len},

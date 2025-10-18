@@ -5,7 +5,8 @@ const ROOT_DIR = path.join(process.cwd(), 'data');
 const OUTPUT_DIR = path.join(process.cwd(), 'merge-data');
 const I18N_FOLDER = path.join(ROOT_DIR, 'i18n');
 const SERVICES_FOLDER = path.join(ROOT_DIR, 'services');
-const IMAGES_FOLDER = path.join(ROOT_DIR, 'images/flags');
+const FLAGS_IMAGES_FOLDER = path.join(ROOT_DIR, 'images/flags');
+const DYNAMICS_IMAGES_FOLDER = path.join(ROOT_DIR, 'images/dynamics');
 
 // Remove existing merge-data folder if it exists
 if (fs.existsSync(OUTPUT_DIR)) {
@@ -155,9 +156,14 @@ function processAll() {
         console.log(`Copied ${SERVICES_FOLDER} folder to merge-data/services`);
     }
     // Copy images folder (exclude from Arduino, laguage selector should use emdebbed images)
-    if (fs.existsSync(IMAGES_FOLDER)) {
-        copyFolder(IMAGES_FOLDER, path.join(OUTPUT_DIR, 'images','flags'));
-        console.log(`Copied ${IMAGES_FOLDER} folder to merge-data/images/flags`);
+    if (fs.existsSync(FLAGS_IMAGES_FOLDER)) {
+        copyFolder(FLAGS_IMAGES_FOLDER, path.join(OUTPUT_DIR, 'images','flags'));
+        console.log(`Copied ${FLAGS_IMAGES_FOLDER} folder to merge-data/images/flags`);
+    }
+    // Copy images folder (exclude from Arduino, laguage selector should use emdebbed images)
+    if (fs.existsSync(DYNAMICS_IMAGES_FOLDER)) {
+        copyFolder(DYNAMICS_IMAGES_FOLDER, path.join(OUTPUT_DIR, 'images','dynamics'));
+        console.log(`Copied ${DYNAMICS_IMAGES_FOLDER} folder to merge-data/images/dynamics`);
     }
 
     console.log(`Done! Modified HTML, images, JS, CSS, and i18n saved in "${OUTPUT_DIR}".`);
