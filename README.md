@@ -40,6 +40,17 @@ load test-includes.html
 
 use the WebSocketsServer library (part of the ESP8266 core) to add real-time, bidirectional communication — perfect for streaming your avmSerial logs or sensor data live to a webpage.
 
+## password in EEPROM
+
+emulated on stm boards
+
+    Summary of Available Methods
+    Method                  Description
+    begin(size_t size)      Initializes EEPROM and sets default password if needed
+    readPassword()          Reads the current 20-byte password
+    writePassword(String)   Stores a new password (max 20 chars)
+    resetPassword()         Resets password to "1234" and commits it    
+
 ## Todo
 
 * next websocket demo (first fake with polling get-request)

@@ -4,6 +4,7 @@
 #include "cfilesystem.h" // Dein generiertes FS aus Node-Skript
 #include "avmSerial.h"
 #include "websocket_service.hpp"
+#include "passwordStorage.hpp"
 #include ".credentials.h"
 
 const char *ssid = __SSID;
@@ -15,6 +16,8 @@ ESP8266WebServer server(80);
 
 // --- Example avm overloades serial out---
 avmSerial mySerial;
+
+PasswordStorage passStorage;
 
 String getAvmSerialAsHtmlList()
 {
@@ -212,6 +215,19 @@ void setup()
 
   // Builtin LED als Ausgang
   pinMode(LED_BUILTIN, OUTPUT);
+
+  // add password storage
+  passStorage.begin();
+
+  String pwd = passStorage.readPassword();
+  Serial.print("Stored password: ");
+  Serial.println(pwd);
+
+  passStorage.writePassword("test");
+  pwd = passStorage.readPassword();
+  Serial.print("NEw password: ");
+  Serial.println(pwd);
+
 }
 
 unsigned long nextTimeToCall = 0;
@@ -224,7 +240,7 @@ void loop()
 
   if (int(millis() - nextTimeToCall) > 0)
   {
-   wsCounter++;
+    wsCounter++;
     String msg = String(wsCounter);
     sendWebSocketLog(msg);
     nextTimeToCall = millis() + 500;
