@@ -156,10 +156,40 @@ void handleCurrentState()
 void handleGetPassword()
 {
   String json = "{";
-  json += "\"password\":\"" + appPassword + "\"";
+  json += "\"password\":\"" + passStorage.readPassword() + "\"";
   json += "}";
 
   server.send(200, "application/json", json);
+}
+
+void handleSetPassword()
+{
+  if (!server.hasArg("password"))
+  {
+    server.send(400, "text/plain", "Error: missing 'password' parameter");
+    return;
+  }
+
+  String newPass = server.arg("password");
+
+  if (newPass.length() > 20)
+  {
+    server.send(400, "text/plain", "Error: password too long (max 20 chars)");
+    return;
+  }
+
+  passStorage.writePassword(newPass);
+  Serial.print("New password saved: ");
+  Serial.println(newPass);
+
+  server.send(200, "text/plain", "Password updated successfully");
+}
+
+void handleResetPassword()
+{
+  passStorage.resetPassword();
+  Serial.println("Password reset to default...");
+  server.send(200, "text/plain", "Password has been reset to default");
 }
 
 void setup()
@@ -200,10 +230,14 @@ void setup()
 
   // Routen
   server.on("/", handleRoot);
-  server.on("/services/messagelog.html", handleMessageLog);       // Add new route
-  server.on("/services/filedirectory.html", handleFileDirectory); // Add new route
-  server.on("/services/currentstate.json", handleCurrentState);   // Add new route
-  server.on("/services/getpassword", handleGetPassword);          // Add new route
+  server.on("/services/messagelog.html", handleMessageLog); // Add new route
+  server.on("/services/filedirectory.html", handleFileDirectory);
+  server.on("/services/currentstate.json", handleCurrentState);
+
+  server.on("/services/getpassword", handleGetPassword);
+  server.on("/services/setpassword", handleSetPassword);
+  server.on("/services/resetpassword", handleResetPassword);
+
   server.onNotFound(handleFile);
 
   // Webserver starten
@@ -222,12 +256,6 @@ void setup()
   String pwd = passStorage.readPassword();
   Serial.print("Stored password: ");
   Serial.println(pwd);
-
-  passStorage.writePassword("test");
-  pwd = passStorage.readPassword();
-  Serial.print("NEw password: ");
-  Serial.println(pwd);
-
 }
 
 unsigned long nextTimeToCall = 0;

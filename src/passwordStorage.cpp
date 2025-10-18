@@ -1,6 +1,6 @@
 #include "passwordStorage.hpp"
 
-#define DEFAULT_PASSWORD "12345"
+#define DEFAULT_PASSWORD "1234"
 
 PasswordStorage::PasswordStorage(int startAddress)
     : _startAddress(startAddress) {}
