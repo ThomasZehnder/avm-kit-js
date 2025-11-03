@@ -49,7 +49,7 @@
         <input type="text" name="firstname" placeholder="First name" aria-label="First name" required>
         <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email"
           required>
-        <button type="submit">Subscribe</button>
+        <p-button type="submit">Subscribe</p-button>
         <fieldset>
           <label for="terms">
             <input type="checkbox" role="switch" id="terms" name="terms">
@@ -304,7 +304,7 @@
     <!-- Modal -->
     <section id="modal">
       <h2>Modal</h2>
-      <button class="contrast" onclick="modalExample.showModal()">Launch demo modal</button>
+      <p-button class="contrast" onclick="modalExample.showModal()">Launch demo modal</p-button>
     </section>
     <!-- ./ Modal -->
 
@@ -373,7 +373,7 @@
     <section id="loading">
       <h2>Loading</h2>
       <article aria-busy="true"></article>
-      <button aria-busy="true">Please wait…</button>
+      <p-button aria-busy="true">Please wait…</p-button>
     </section>
     <!-- ./ Loading -->
   </main>
@@ -384,7 +384,7 @@
   <dialog id="modalExample">
     <article>
       <header>
-        <button aria-label="Close" rel="prev" onclick="modalExample.close()"></button>
+        <p-button aria-label="Close" rel="prev" onclick="modalExample.close()"></p-button>
         <h3>Confirm your action!</h3>
       </header>
       <p>
@@ -392,8 +392,8 @@
         pellentesque. Nullam finibus risus non semper euismod.
       </p>
       <footer>
-        <button role="button" onclick="modalExample.close()">Cancel</button><button autofocus role="button"
-          onclick="modalExample.close()">Confirm</button>
+        <p-button role="button" onclick="modalExample.close()">Cancel</p-button><p-button autofocus role="button"
+          onclick="modalExample.close()">Confirm</p-button>
       </footer>
     </article>
   </dialog>
