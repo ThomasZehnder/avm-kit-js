@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pure-uikit@1.6.30/cdn/themes/light.css" />
   <script type="module" src="https://cdn.jsdelivr.net/npm/pure-uikit@1.6.30/cdn/pure-ui.js"></script>
 
+  <link rel="stylesheet" href="css/customer.css" />
+
   <script src="js/pico/pages.js"></script>
 </head>
 
@@ -47,23 +49,23 @@
 
 
     <!-- language selector fix positioned with css in the upper right corner-->
-    <p-button id="lang-button">
-      <img class="icon" src="images/globe_icon.svg">
-      </p-button>
-      <!-- Overlay-Dialog for the language-->
-      <div id="lang-dialog">
-        <img src="" alt="Flag">
-      </div>
-      <!-- Logout button  -->
-      <p-button id="logout-button">
-        <img class="icon" src="images/logout_icon.svg">
-        </p-button>
+    <p-button circle id="lang-button">
+      <p-icon name="globe"></p-icon>
+    </p-button>
+    <!-- Overlay-Dialog for the language-->
+    <div id="lang-dialog">
+      <img src="" alt="Flag">
+    </div>
+    <!-- Logout button  -->
+    <p-button circle id="logout-button">
+      <p-icon name="box-arrow-up-right"></p-icon>
+    </p-button>
   </main>
 
   <footer>
     <div class="left">
       <p-button circle id="diagnose-button" onclick="changePage('main')">
-        <p-icon  name="box-arrow-up-right"></p-icon>
+        <p-icon name="house"></p-icon>
       </p-button>
 
     </div>
