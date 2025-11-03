@@ -28,11 +28,11 @@ class MachineSelectPage  {
         const select = document.getElementById('machine-select');
 
         // Remove existing options except the first placeholder
-        select.innerHTML = '<option disabled data-i18n="maschineselectpage.machineselect" value="">Select Machine</option>';
+        select.innerHTML = '<p-option disabled data-i18n="maschineselectpage.machineselect" value="">Select Machine</p-option>';
 
         // Add machines dynamically
         machineArray.forEach((machine, index) => {
-            const option = document.createElement('option');
+            const option = document.createElement('p-option');
             option.value = machine;
             option.textContent = machine;
 
@@ -47,11 +47,11 @@ class MachineSelectPage  {
         const select = document.getElementById('frame-select');
 
         // Remove existing options except the first placeholder
-        select.innerHTML = '<option disabled data-i18n="maschineselectpage.frameselect" value="">Select Frame</option>';
+        select.innerHTML = '<p-option disabled data-i18n="maschineselectpage.frameselect" value="">Select Frame</p-option>';
 
         // Add machines dynamically
         frameArray.forEach((frame, index) => {
-            const option = document.createElement('option');
+            const option = document.createElement('p-option');
             option.value = frame;
             option.textContent = frame;
 
