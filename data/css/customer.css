@@ -35,31 +35,8 @@ h2 {
     padding-top: 5px;
 }
 
-button{
-    background-color: #1d819b;
-    margin-bottom: 10px;
-}
-
-button.navigate {
-    background-color: #1d819b;
-    color: white;
-    border-radius: 5px;
-    padding: 25px;
-    margin: 50px;
-    font-family: 'open sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-}
-
-button:hover {
-    background-color: #114e5d;
-    cursor: pointer;
-}
-
-button:active {
-    background-color: darkgrey;
-
+p-button {
+    margin: 5px;
 }
 
 footer {
