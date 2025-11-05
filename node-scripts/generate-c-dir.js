@@ -29,7 +29,15 @@ let fileEntries = [];
 
 // Hilfsfunktion: C-kompatibler Variablenname
 function sanitizeVariableName(name) {
-    return name.replace(/[^a-zA-Z0-9_]/g, '_');
+    // Replace all non-alphanumeric characters (except underscore) with '_'
+    let sanitized = name.replace(/[^a-zA-Z0-9_]/g, '_');
+
+    // If the first character is a digit, add a prefix '_'
+    if (/^[0-9]/.test(sanitized)) {
+        sanitized = '_' + sanitized;
+    }
+
+    return sanitized;
 }
 
 // Einzel-H-File erzeugen
@@ -56,7 +64,7 @@ async function createFileHeader(filePath, relativePath) {
 }
 
 // Rekursive Durchsuchung bis maxDepth Ebenen
-function walkDir(dir, baseDir = '', depth = 0, maxDepth = 2) {
+function walkDir(dir, baseDir = '', depth = 0, maxDepth = 4) {
     if (depth > maxDepth) return;
 
     const items = fs.readdirSync(dir);

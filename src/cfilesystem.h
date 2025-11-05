@@ -1,35 +1,18 @@
 // Auto-generated main filesystem header
 
-#include "fs/i18n_de_json.h"
-#include "fs/i18n_en_json.h"
-#include "fs/i18n_kr_json.h"
-#include "fs/images_dynamics_targetview_svg.h"
-#include "fs/images_flags_de_svg.h"
-#include "fs/images_flags_en_svg.h"
-#include "fs/images_flags_es_svg.h"
-#include "fs/images_flags_fr_svg.h"
-#include "fs/images_flags_it_svg.h"
-#include "fs/images_flags_kr_svg.h"
+#include "fs/_200_html.h"
+#include "fs/_404_html.h"
+#include "fs/favicon_ico.h"
 #include "fs/index_html.h"
-#include "fs/lamp_html.h"
-#include "fs/languagedemo_html.h"
-#include "fs/pagedemo_html.h"
-#include "fs/pages_diagnosispage_html.h"
-#include "fs/pages_loginpage_html.h"
-#include "fs/pages_machineselectpage_html.h"
-#include "fs/pages_monitorpage_html.h"
-#include "fs/pages_passwordpage_html.h"
-#include "fs/pages_servicepage_html.h"
-#include "fs/services_currentstate_json.h"
-#include "fs/services_filedirectory_html.h"
-#include "fs/services_getdatabase.h"
-#include "fs/services_getpassword.h"
-#include "fs/services_messagelog_html.h"
-#include "fs/services_resetpassword.h"
-#include "fs/services_setpassword.h"
-#include "fs/test_includes_html.h"
-#include "fs/toplineanimation_html.h"
-#include "fs/websocketdemo_html.h"
+#include "fs/robots_txt.h"
+#include "fs/_nuxt_builds_latest_json.h"
+#include "fs/_nuxt_builds_meta_448689d2_7bf0_42b6_81af_5f49b1fd4d1c_json.h"
+#include "fs/_nuxt_ButyJc4N_js.h"
+#include "fs/_nuxt_CDZDShYX_js.h"
+#include "fs/_nuxt_entry_CbRW_jMo_css.h"
+#include "fs/_nuxt_error_404_BLrjNXsr_css.h"
+#include "fs/_nuxt_error_500_DLkAwcfL_css.h"
+#include "fs/_nuxt_tg33wtwT_js.h"
 
 typedef struct {
     const char* name;
@@ -38,36 +21,19 @@ typedef struct {
 } CFileEntry;
 
 const CFileEntry cFileSystem[] = {
-    {"i18n/de.json", i18n_de_json, i18n_de_json_len},
-    {"i18n/en.json", i18n_en_json, i18n_en_json_len},
-    {"i18n/kr.json", i18n_kr_json, i18n_kr_json_len},
-    {"images/dynamics/targetview.svg", images_dynamics_targetview_svg, images_dynamics_targetview_svg_len},
-    {"images/flags/de.svg", images_flags_de_svg, images_flags_de_svg_len},
-    {"images/flags/en.svg", images_flags_en_svg, images_flags_en_svg_len},
-    {"images/flags/es.svg", images_flags_es_svg, images_flags_es_svg_len},
-    {"images/flags/fr.svg", images_flags_fr_svg, images_flags_fr_svg_len},
-    {"images/flags/it.svg", images_flags_it_svg, images_flags_it_svg_len},
-    {"images/flags/kr.svg", images_flags_kr_svg, images_flags_kr_svg_len},
+    {"200.html", _200_html, _200_html_len},
+    {"404.html", _404_html, _404_html_len},
+    {"favicon.ico", favicon_ico, favicon_ico_len},
     {"index.html", index_html, index_html_len},
-    {"lamp.html", lamp_html, lamp_html_len},
-    {"languagedemo.html", languagedemo_html, languagedemo_html_len},
-    {"pagedemo.html", pagedemo_html, pagedemo_html_len},
-    {"pages/diagnosispage.html", pages_diagnosispage_html, pages_diagnosispage_html_len},
-    {"pages/loginpage.html", pages_loginpage_html, pages_loginpage_html_len},
-    {"pages/machineselectpage.html", pages_machineselectpage_html, pages_machineselectpage_html_len},
-    {"pages/monitorpage.html", pages_monitorpage_html, pages_monitorpage_html_len},
-    {"pages/passwordpage.html", pages_passwordpage_html, pages_passwordpage_html_len},
-    {"pages/servicepage.html", pages_servicepage_html, pages_servicepage_html_len},
-    {"services/currentstate.json", services_currentstate_json, services_currentstate_json_len},
-    {"services/filedirectory.html", services_filedirectory_html, services_filedirectory_html_len},
-    {"services/getdatabase", services_getdatabase, services_getdatabase_len},
-    {"services/getpassword", services_getpassword, services_getpassword_len},
-    {"services/messagelog.html", services_messagelog_html, services_messagelog_html_len},
-    {"services/resetpassword", services_resetpassword, services_resetpassword_len},
-    {"services/setpassword", services_setpassword, services_setpassword_len},
-    {"test-includes.html", test_includes_html, test_includes_html_len},
-    {"toplineanimation.html", toplineanimation_html, toplineanimation_html_len},
-    {"websocketdemo.html", websocketdemo_html, websocketdemo_html_len},
+    {"robots.txt", robots_txt, robots_txt_len},
+    {"_nuxt/builds/latest.json", _nuxt_builds_latest_json, _nuxt_builds_latest_json_len},
+    {"_nuxt/builds/meta/448689d2-7bf0-42b6-81af-5f49b1fd4d1c.json", _nuxt_builds_meta_448689d2_7bf0_42b6_81af_5f49b1fd4d1c_json, _nuxt_builds_meta_448689d2_7bf0_42b6_81af_5f49b1fd4d1c_json_len},
+    {"_nuxt/ButyJc4N.js", _nuxt_ButyJc4N_js, _nuxt_ButyJc4N_js_len},
+    {"_nuxt/CDZDShYX.js", _nuxt_CDZDShYX_js, _nuxt_CDZDShYX_js_len},
+    {"_nuxt/entry.CbRW-jMo.css", _nuxt_entry_CbRW_jMo_css, _nuxt_entry_CbRW_jMo_css_len},
+    {"_nuxt/error-404.BLrjNXsr.css", _nuxt_error_404_BLrjNXsr_css, _nuxt_error_404_BLrjNXsr_css_len},
+    {"_nuxt/error-500.DLkAwcfL.css", _nuxt_error_500_DLkAwcfL_css, _nuxt_error_500_DLkAwcfL_css_len},
+    {"_nuxt/tg33wtwT.js", _nuxt_tg33wtwT_js, _nuxt_tg33wtwT_js_len},
 };
 
 const int cFileSystemCount = sizeof(cFileSystem)/sizeof(cFileSystem[0]);

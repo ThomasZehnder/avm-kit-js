@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "run copy frontend": "node ./node-scripts/copyPublicToData.js",
     "run mergebuild": "node ./node-scripts/merge-js-img.js",
     "run filebuild original": "node ./node-scripts/generate-c-dir.js data",
     "run filebuild merged": "node ./node-scripts/generate-c-dir.js merge-data"
