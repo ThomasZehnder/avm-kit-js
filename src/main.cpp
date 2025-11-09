@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <WebSocketsServer.h>
-#include "cfilesystem.h" // Dein generiertes FS aus Node-Skript
+#include <FS.h> // SPIFFS filesystem
 #include "avmSerial.h"
 #include "websocket_service.hpp"
 #include "passwordStorage.hpp"
@@ -54,8 +54,8 @@ String getMimeType(const String &path)
 
 String getCFileDirectoryAsHtmlList()
 {
-  String html = "<h2>Available files</h2><ul>";
-  for (int i = 0; i < cFileSystemCount; i++)
+  String html = "<h2>note available</h2><ul>";
+  /*for (int i = 0; i < cFileSystemCount; i++)
   {
     html += "<li><a href=\"/";
     html += cFileSystem[i].name;
@@ -65,6 +65,7 @@ String getCFileDirectoryAsHtmlList()
     html += "</a></li>";
   }
   html += "</ul>";
+  */
   return html;
 }
 
@@ -105,18 +106,36 @@ void handleFile()
   mySerial.println(" File Request: " + path);
   mySerial.println(" Method Request: " + methodToString(server.method()));
 
-  if (path.startsWith("/"))
-    path.remove(0, 1); // "/" removen
-
-  const CFileEntry *file = findCFileSystem(path.c_str());
-  if (file)
+  // Try to open file from SPIFFS
+  if (!SPIFFS.exists(path))
   {
-    String mime = getMimeType(path);
-    server.send_P(200, mime.c_str(), (const char *)file->data, file->len);
+    // If path doesn't have leading slash, try adding it
+    if (!path.startsWith("/"))
+    {
+      path = "/" + path;
+    }
+  }
+
+  if (SPIFFS.exists(path))
+  {
+    File file = SPIFFS.open(path, "r");
+    if (file)
+    {
+      String mime = getMimeType(path);
+      server.streamFile(file, mime);
+      file.close();
+      mySerial.println(" Served from SPIFFS: " + path);
+    }
+    else
+    {
+      server.send(500, "text/plain", "Failed to open file");
+      mySerial.println(" Error: Failed to open file: " + path);
+    }
   }
   else
   {
     server.send(404, "text/plain", "File not found");
+    mySerial.println(" Error: File not found: " + path);
   }
 }
 
@@ -196,6 +215,18 @@ void setup()
 {
   Serial.begin(115200);
   delay(500);
+
+  // Initialize SPIFFS
+  if (!SPIFFS.begin())
+  {
+    Serial.println("SPIFFS Mount Failed!");
+    mySerial.println("SPIFFS Mount Failed!");
+  }
+  else
+  {
+    Serial.println("SPIFFS Mounted Successfully");
+    mySerial.println("SPIFFS Mounted Successfully");
+  }
 
   // test mySerial
   mySerial.println("Line 1");
